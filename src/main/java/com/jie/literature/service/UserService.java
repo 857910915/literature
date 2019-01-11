@@ -21,4 +21,9 @@ public interface UserService{
     public int updateUser(User user);
     //获取用户列表
     public PageInfo toSelectUserList(int pageNo,int pageSize);
+    public PageInfo toSelectAllUserList(int pageNo,int pageSize);
+    //删除用户
+    public void toDelete(int userId);
+    //修改用户状态
+    public void toUpdateStatus(User user);
 }

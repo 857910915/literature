@@ -1,38 +1,47 @@
-var pageNo=1;
+var pageNo;
 $(function () {
+    pageNo=1;
     toShow();
 });
 
 function toShow() {
     $.get("../msg/toSelectMsgList",{"pageNo":pageNo},function (data) {
-        console.log(data)
-        var num=data.length;
-        var num1=Math.ceil(num/20);
-        $("#num1").html(num);
-        $("#num2").html(pageNo+"/"+num1);
-        for (var i in data){
-            var msg=data[i];
-            var date=new Date(msg.msgCreatetime);
-            var time=formatDate(date)
-            $("#tb").append('<tr id="gutstbook_'+msg.msgId+'">\n' +
-                '                            <td>\n' +
-                '                                '+msg.msgText+'\n' +
-                '                                <div style="color:#999; font-size:12px;">\n' +
-                '                                '+time+'\n' +
-                '                                </div>\n' +
-                '                                <div class="reply_c" style="border:1px solid #eee; margin:10px 0; padding:5px; background:#F9F9F9; display:none;"></div>\n' +
-                '                                <div class="replay_box" style="padding:10px 0; overflow:hidden; display:none;">\n' +
-                '                                    <textarea class="reply_content" style="font-size:12px; width:98%; height:38px; padding:3px; line-height:1.3em; "></textarea>\n' +
-                '                                    <div class="clear"></div>\n' +
-                '                                    <a class="btn reply_ok" href="javascript:;" id="400131"><span>&nbsp;确定&nbsp;</span></a>\n' +
-                '                                </div>\n' +
-                '                            </td>\n' +
-                '                            <td align="center">'+msg.suser.userNickname+'</td>\n' +
-                '                            <td align="center"><a href="javascript:;" class="reply">回复</a>&nbsp;<a href="javascript:shanchu('+msg.msgId+');" class="del" id="40013">删除</a></td>\n' +
-                '                        </tr>');
+        $("#num1").html(data.length);
+        $("#num2").html(pageNo);
+        if (data.length<20){
+            $("#next").removeAttr("href");
+        }else {
+            $("#next").attr("href","javascript:nextPage();");
         }
+        $("#tb").empty();
+        toAdd(data);
+
 
     },"json");
+}
+
+function toAdd(data) {
+    for (var i in data){
+        var msg=data[i];
+        var date=new Date(msg.msgCreatetime);
+        var time=formatDate(date)
+        $("#tb").append('<tr id="gutstbook_'+msg.msgId+'">\n' +
+            '                            <td>\n' +
+            '                                '+msg.msgText+'\n' +
+            '                                <div style="color:#999; font-size:12px;">\n' +
+            '                                '+time+'\n' +
+            '                                </div>\n' +
+            '                                <div class="reply_c" style="border:1px solid #eee; margin:10px 0; padding:5px; background:#F9F9F9; display:none;"></div>\n' +
+            '                                <div class="replay_box" style="padding:10px 0; overflow:hidden; display:none;">\n' +
+            '                                    <textarea class="reply_content" style="font-size:12px; width:98%; height:38px; padding:3px; line-height:1.3em; "></textarea>\n' +
+            '                                    <div class="clear"></div>\n' +
+            '                                    <a class="btn reply_ok" href="javascript:;" id="400131"><span>&nbsp;确定&nbsp;</span></a>\n' +
+            '                                </div>\n' +
+            '                            </td>\n' +
+            '                            <td align="center">'+msg.suser.userNickname+'</td>\n' +
+            '                            <td align="center"><a href="javascript:;" class="reply">回复</a>&nbsp;<a href="javascript:shanchu('+msg.msgId+');" class="del" id="40013">删除</a></td>\n' +
+            '                        </tr>');
+    }
 }
 
 function shanchu(msgId) {
@@ -66,16 +75,5 @@ function prePage() {
         return;
     }
     pageNo--;
-    toShow();
-}
-//首页
-function firstPage() {
-    pageNo=1;
-    toShow();
-}
-//末页
-function lastPage() {
-    var num=$("#num2").val();
-    pageNo=num.split("/")[1];
     toShow();
 }

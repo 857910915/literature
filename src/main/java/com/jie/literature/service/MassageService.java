@@ -16,4 +16,6 @@ public interface MassageService {
     public List<Massage>toSelectAllMsgList(Massage massage);
     //删除留言
     public void toDeleteMsg(int msgId);
+    //改变留言状态
+    public void toUpdateMsg(Massage massage);
 }

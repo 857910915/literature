@@ -52,4 +52,9 @@ public class MassageServiceImpl implements MassageService {
     public void toDeleteMsg(int msgId) {
         massageMapper.deleteByPrimaryKey(msgId);
     }
+
+    @Override
+    public void toUpdateMsg(Massage massage) {
+        massageMapper.updateByPrimaryKeySelective(massage);
+    }
 }

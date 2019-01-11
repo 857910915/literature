@@ -29,4 +29,6 @@ public interface UserMapper {
     public List<Permission> findPermission(String username);
     //获取用户列表
     public List<User> toSelectUserList();
+    //获取全部用户
+    public List<User> toSelectAllUserList();
 }

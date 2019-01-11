@@ -22,4 +22,6 @@ public interface CommentMapper {
     int updateByPrimaryKey(Comment record);
 
     List<Comment> toSelectCommentList(int comAid);
+
+    List<Comment> toSelectAllComList(Comment comment);
 }

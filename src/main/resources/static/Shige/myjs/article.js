@@ -2,7 +2,7 @@ $(function () {
     var artId=showWindowHref();
     $.get("../article/toFindArticle",{"artId":artId},function (data) {
         console.log(data);
-        $("#zuoze").html('<a target="_blank" href="/User/user.html?username=?'+data.user.username+'">'+data.user.userNickname+'的诗词</a>');
+        $("#zuoze").html('<a target="_blank" href="/User/user.html?username='+data.user.username+'">'+data.user.userNickname+'的诗词</a>');
         $("#biaoti").html(data.artTitle);
         $("#artText").html(data.artText.replace(/\n/g,"<br/>"));
         var date=new Date(data.artCreatetime);
@@ -17,7 +17,7 @@ $(function () {
             $("#pinglun").append('<li><span class="ziduan">\n' +
                 '                <a href="/User/user.html?username='+com.user.username+'"><img src="../'+com.user.userImg+'"></a></span>\n' +
                 '                <div class="wen">\n' +
-                '                    <h2><a href="/User/user.html?username='+com.user.username+'">'+com.user.userNickname+'</a>2018/11/12 17:29:19</h2>\n' +
+                '                    <h2><a href="/User/user.html?username='+com.user.username+'">'+com.user.userNickname+'</a>'+time1+'</h2>\n' +
                 '                    <div class="wenzi">'+com.comText+'</div>\n' +
                 '                    <h3>\n' +
                 '                        <a href="javascript:;" onclick="tohuifu('+com.comId+');">\n' +

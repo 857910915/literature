@@ -1,15 +1,19 @@
-var pageNo=1;
+var pageNo;
 $(function () {
+    pageNo=1;
    toShow();
 });
 
 function toShow() {
     $.get("../article/toSelectArticleList",{"pageNo":pageNo},function (data) {
-        console.log(data);
-        var num=data.length;
-        var num1=Math.ceil(num/20);
-        $("#num1").html(num);
-        $("#num2").html(pageNo+"/"+num1);
+        $("#num1").html(data.length);
+        $("#num2").html(pageNo);
+        if (data.length<20){
+            $("#next").removeAttr("href");
+        }else {
+            $("#next").attr("href","javascript:nextPage();");
+        }
+        $("#tb").empty();
         toAdd(data);
     },"json");
 }
@@ -91,16 +95,5 @@ function prePage() {
         return;
     }
     pageNo--;
-    toShow();
-}
-//首页
-function firstPage() {
-    pageNo=1;
-    toShow();
-}
-//末页
-function lastPage() {
-    var num=$("#num2").val();
-    pageNo=num.split("/")[1];
     toShow();
 }

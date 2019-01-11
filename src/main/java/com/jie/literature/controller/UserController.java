@@ -122,6 +122,24 @@ public class UserController {
         return JSON.toJSONString(pageInfo.getList());
     }
 
+    @RequestMapping("/toSelectAllUserList")
+    @ResponseBody
+    public String toSelectAllUserList(int pageNo,int pageSize){
+        PageInfo pageInfo=userService.toSelectAllUserList(pageNo,pageSize);
+        return JSON.toJSONString(pageInfo.getList());
+    }
+
+    @RequestMapping("/toDelete")
+    @ResponseBody
+    public void toDelete(int userId){
+        userService.toDelete(userId);
+    }
+
+    @RequestMapping("/toUpdateStatus")
+    @ResponseBody
+    public void toUpdateStatus(User user){
+        userService.toUpdateStatus(user);
+    }
 
 
 }

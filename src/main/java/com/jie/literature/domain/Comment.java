@@ -17,6 +17,16 @@ public class Comment {
 
     private User user;
 
+    private Article article;
+
+    public Article getArticle() {
+        return article;
+    }
+
+    public void setArticle(Article article) {
+        this.article = article;
+    }
+
     public User getUser() {
         return user;
     }

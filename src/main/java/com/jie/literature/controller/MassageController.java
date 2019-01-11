@@ -1,6 +1,7 @@
 package com.jie.literature.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.jie.literature.domain.Massage;
 import com.jie.literature.domain.User;
@@ -61,10 +62,28 @@ public class MassageController {
         return JSON.toJSONString(list);
     }
 
+    @RequestMapping("/toSelectAllMsgList1")
+    public String toSelectAllMsgList1(Massage massage,int pageNo,int pageSize){
+        List list =massageService.toSelectAllMsgList(massage);
+        PageHelper.startPage(pageNo, pageSize);
+        PageInfo<Massage>pageInfo=new PageInfo<>(list);
+        return JSON.toJSONString(pageInfo.getList());
+    }
+
     @RequestMapping("/toDeleteMsg")
     public String toDeleteMsg(int msgId){
         massageService.toDeleteMsg(msgId);
         return JSON.toJSONString("删除成功！");
+    }
+
+    @RequestMapping("/toUpdateMsg")
+    public String toUpdateMsg(Massage massage){
+        String msg="已删除";
+        if (massage.getMsgStatus()==0){
+            msg="已恢复";
+        }
+        massageService.toUpdateMsg(massage);
+        return JSON.toJSONString(msg);
     }
 
 }

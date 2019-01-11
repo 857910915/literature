@@ -280,4 +280,8 @@
     select * from user where user_status=0
   </select>
 
+  <select id="toSelectAllUserList" resultType="User">
+    select * from user order by user_createtime desc
+  </select>
+
 </mapper>

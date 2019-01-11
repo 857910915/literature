@@ -10,45 +10,7 @@
     <script type="text/javascript" src="js/msgbox.js"></script>
     <script type="text/javascript" src="myjs/iframe.js"></script>
     <script type="text/javascript" src="myjs/content.js"></script>
-    <!--<script type="text/javascript">
-        function delArc(aid) {
-            if (window.confirm('你确定要删除这篇文档吗?')) {
-                $.get("ajaxaction.php", {'aid': aid, 'dopost': 'delarc'}, function(res) {
-                    var data = eval("(" + res + ")");
-                    if (data.status) {
-                        $("#tr" + aid).remove();
-                    } else {
-                        ZENG.msgbox.show(data.message, 1, 3000);
-                        return false;
-                    }
-                });
-            }
-        }
-        function delArcFuyan(aid) {
-            if (window.confirm('你确定要删除这个小编附言吗?')) {
-                $.get("ajaxaction.php", {'aid': aid, 'dopost': 'delarcfuyan'}, function(res) {
-                    var data = eval("(" + res + ")");
 
-                    if (data.status) {
-                        $("#fy" + aid).remove();
-                    } else {
-                        ZENG.msgbox.show(data.message, 1, 3000);
-                        return false;
-                    }
-                });
-            }
-        }
-        $(function() {
-            $("#btn-go-page").click(function() {
-                var page = parseInt($("#go-page").val());
-                if (isNaN(page) || page &lt; 1) {
-                    page = 1;
-                }
-                var url = 'content_list.php?channelid=1&amp;p=' + page;
-                window.location.href = url;
-            });
-        });
-    </script>-->
 </head>
 
 <body>
@@ -161,28 +123,11 @@
                     </tr>
                     </thead>
                     <tbody id="tb">
-                    <!--<tr id="tr4789682">-->
-                        <!--<td><a class="fl" target="_blank" href="/article/4789682.html"><span  class="i_see"></span>流浪</a>-->
-                        <!--</td>-->
-                        <!--<td align="center">-->
-                            <!--<a href="/shige/xiandai" target="_blank">现代诗歌</a>-->
-                        <!--</td>-->
-                        <!--<td align="center"><span class="green">已通过</span></td>-->
-                        <!--<td align="center">3</td>-->
-                        <!--<td align="center">37</td>-->
-                        <!--<td align="center">12/19</td>-->
-                    <!--</tr>-->
-
-
 
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td colspan="20" align="right"><div style="display:inline-block; width:100px; height:23px; overflow:hidden; border:1px solid #F2F2F2; float:right; margin-left:10px;  margin-top:5px; position:relative;">
-                            <input id="go-page" type="text" style="border:none; width:80px; height:23px; line-height:23px; border:none; background:none; overflow:hidden; position:absolute; left:0; top:0;" value="1" />
-                            <button type="button" id="btn-go-page" style=" background:#50BD72; color:#fff; border:none; cursor:pointer; height:23px; line-height:23px; width:20px; font-size:12px; position:absolute; right:0; top:0;">GO</button>
-                        </div>
-                            共<span id="num1"></span>条记录,当前<span id="num2"></span>页&nbsp;&nbsp;<a href="javascript:firstPage();">首页</a> <a href="javascript:prePage()">上一页</a> <a href="javascript:nextPage()">下一页</a> <a href="javascript:lastPage()">尾页</a></td>
+                        <td colspan="20" align="right">共<span id="num1"></span>条记录,当前<span id="num2"></span>页&nbsp;&nbsp;<a href="javascript:prePage();" id="pre">上一页</a> <a href="javascript:nextPage();" id="next">下一页</a></td>
                     </tr>
                     </tfoot>
                 </table>

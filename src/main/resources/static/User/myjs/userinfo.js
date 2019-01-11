@@ -13,7 +13,13 @@ $(function () {
         },"json");
     }else {
         $.get("../user/toSelectUser",{"username":username},function (data) {
-
+            $("#userImg2").attr("src","../"+data.userImg);
+            $("#userImg2").attr("alt",data.userNickname);
+            $("#biming").html("笔名："+data.userNickname);
+            var date=new Date(data.userBirthday);
+            var time=formatDate(date);
+            $("#shengri").html("生日："+time);
+            $("#sex").html("性别："+data.userSex);
         },"json");
     }
 });

@@ -105,8 +105,15 @@
   </update>
 
   <select id="toSelectCommentList" resultType="Comment">
-    select * from comment where com_aid=#{comAid} order by com_createtime desc
+    select * from comment where com_aid=#{comAid} and com_status=0 order by com_createtime desc
   </select>
-
+  <select id="toSelectAllComList" resultType="Comment">
+    select * from comment
+    where 1=1
+    <if test="comStatus!=null">
+      and com_status=#{comStatus}
+    </if>
+    order by com_createtime desc
+  </select>
 
 </mapper>

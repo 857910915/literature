@@ -45,6 +45,17 @@ public class ArticleController {
         PageInfo pageInfo = articleService.selectList(article,pageNo,20);
         return JSON.toJSONString(pageInfo.getList());
     }
+
+    @RequestMapping("/toSelectArticleList2")
+    public  String toSelectArticleList2(Article article,int pageNo,int pageSize){
+        Subject subject = SecurityUtils.getSubject();
+        String username = (String)subject.getPrincipal();
+        User user=userService.findUser(username);
+        article.setArtUid(user.getUserId());
+        PageInfo pageInfo = articleService.selectList(article,pageNo,pageSize);
+        return JSON.toJSONString(pageInfo.getList());
+    }
+
     @RequestMapping("/toSelectArticleList1")
     public  String toSelectArticleList1(Article article,int pageNo,int pageSize){
         PageInfo pageInfo = articleService.selectList(article,pageNo,pageSize);

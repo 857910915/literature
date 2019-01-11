@@ -117,4 +117,22 @@ public class UserServiceImpl implements UserService {
         PageInfo<User>pageInfo=new PageInfo<>(list);
         return pageInfo;
     }
+
+    @Override
+    public PageInfo toSelectAllUserList(int pageNo, int pageSize) {
+        PageHelper.startPage(pageNo, pageSize);
+        List<User>list=userMapper.toSelectAllUserList();
+        PageInfo<User>pageInfo=new PageInfo<>(list);
+        return pageInfo;
+    }
+
+    @Override
+    public void toUpdateStatus(User user) {
+        userMapper.updateByPrimaryKeySelective(user);
+    }
+
+    @Override
+    public void toDelete(int userId) {
+        userMapper.deleteByPrimaryKey(userId);
+    }
 }

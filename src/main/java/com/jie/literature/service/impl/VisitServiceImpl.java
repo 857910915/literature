@@ -40,7 +40,7 @@ public class VisitServiceImpl implements VisitService {
             User user=userMapper.selectByPrimaryKey(list.get(i).getVisitUid());
             list.get(i).setUser(user);
         }
-        PageHelper.startPage(pageNo, 10);
+        PageHelper.startPage(pageNo, 8);
         PageInfo<Visit>pageInfo=new PageInfo<>(list);
         return pageInfo;
     }

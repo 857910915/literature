@@ -25,12 +25,12 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public PageInfo<News> toSelectNewsList(News news, Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
         List<News>list=newsMapper.toSelectNewsList(news);
         for (int i=0;i<list.size();i++){
             User suser=userMapper.selectByPrimaryKey(list.get(i).getNewsSuid());
             list.get(i).setSuser(suser);
         }
-        PageHelper.startPage(pageNum, pageSize);
         PageInfo<News> pageInfo=new PageInfo<News>(list);
         return pageInfo;
     }

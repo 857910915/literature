@@ -8,10 +8,6 @@ $(function () {
         var time=formatDate(date);
         $("#msgTime").html(time);
         $("#msgText").html(data.newsText);
-        // if (data.newsTitle=="审核通过"){
-        //     $("#lianjie").html(",点击此链接查看该文章");
-        //     $("#lianjie").attr("href","/Shige/article.html?artId");
-        // }
 
     },"json");
 });

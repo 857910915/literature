@@ -1,7 +1,8 @@
 var pageNo=1;
+var username=showWindowHref();
 $(function () {
     //获取用户信息
-    var username=showWindowHref();
+
     if (username.length==0){
         $.get("../user/toSelectUser1",function (data) {
             // console.log(data);
@@ -68,7 +69,6 @@ function showWindowHref() {
 
 //关注
 function toGuanzhu() {
-    var username=showWindowHref();
     if (username.length==0){
         alert("不能关注自己");
     } else {
@@ -78,8 +78,6 @@ function toGuanzhu() {
         },"json");
     }
 }
-
-
 
 //下一页
 function nextPage() {

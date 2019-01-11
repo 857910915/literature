@@ -1,14 +1,18 @@
-var pageNo=1;
+var pageNo;
 var username=showWindowHref();
 $(function () {
+    pageNo=1;
     toShow();
 });
 function toShow() {
     $.get("../article/toSelectArticleList",{"pageNo":pageNo,"artStatus":1,"username":username},function (data) {
-        console.log(data);
-        var num=data.length;
-        var num1=Math.ceil(num/20);
-        $(".ttpage").html("共"+num1+"页");
+        // console.log(data);
+        if (data.length<20){
+            $("#next").removeAttr("href");
+        }else {
+            $("#next").attr("href","javascript:nextPage();");
+        }
+        $("#content1").empty();
         toAdd(data);
     },"json");
 }
@@ -57,4 +61,18 @@ function showWindowHref() {
     var arr = args[1].split('=');
     //console.log(arr[1]);
     return arr[1];
+}
+
+//下一页
+function nextPage() {
+    pageNo++;
+    toShow();
+}
+//上一页
+function prePage() {
+    if (pageNo==1){
+        return;
+    }
+    pageNo--;
+    toShow();
 }
