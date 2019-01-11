@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>发表诗歌 - 会员中心 - 水墨世界</title>
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/member.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/msgbox.js"></script>
+    <!--<script type="text/javascript" src="/tougao/keywordsVerify.js"></script>-->
+    <script type="text/javascript" src="myjs/iframe.js"></script>
+    <script type="text/javascript" src="myjs/addArticle.js"></script>
+    <!--<script type="text/javascript">
+        $(function(){
+            $("#article_add_submit").click(function(){
+                if($("#title").val() == ''){
+                    bwError("请输入标题");
+                    $("#title").trigger('focus');
+                    return false;
+                }
+                if(dectetedKeywordsNum($("#title").val())){
+                    bwError("标题含有非法字符");
+                    $("#title").trigger('focus');
+                    return false;
+                }
+
+                if($("#body").val() == '' || $("#body").val().length < 20 ){
+                    bwError("请输入内容,且字数为20字以上!");
+                    $("#body").trigger('focus');
+                    return false;
+                }
+                if(dectetedKeywordsNum($("#body").val())){
+                    bwError("内容含有非法字符");
+                    $("#title").trigger('focus');
+                    return false;
+                }
+
+                if($("#body").val().length > 8000 ){
+                    bwError("内容字数过多,请不要超过8000字!");
+                    $("#body").trigger('focus');
+                    return false;
+                }
+
+                if($("#typeid").val() == 0){
+                    bwError("请选择分类!");
+                    return false;
+                }
+                $(this).hide();
+                $("#article_add_submit_msg").show();
+                // $(this).closest("form").submit();
+            });
+
+
+            $("#article_add_submit_to_draft").click(function(){
+                if($("#title").val() == ''){
+                    bwError("请输入标题");
+                    $("#title").trigger('focus');
+                    return false;
+                }
+                if(dectetedKeywordsNum($("#title").val())){
+                    bwError("标题含有非法字符");
+                    $("#title").trigger('focus');
+                    return false;
+                }
+
+                if($("#body").val() == '' || $("#body").val().length < 20 ){
+                    bwError("请输入内容,且字数为20字以上!");
+                    $("#body").trigger('focus');
+                    return false;
+                }
+                if(dectetedKeywordsNum($("#body").val())){
+                    bwError("内容含有非法字符");
+                    $("#title").trigger('focus');
+                    return false;
+                }
+
+                if($("#body").val().length > 8000 ){
+                    bwError("内容字数过多,请不要超过8000字!");
+                    $("#body").trigger('focus');
+                    return false;
+                }
+
+                if($("#typeid").val() == 0){
+                    bwError("请选择分类!");
+                    return false;
+                }
+                $(this).hide();
+                $("#article_add_submit_to_draft_msg").show();
+                $("#save_in_draft").val(1);
+
+                // $(this).closest("form").submit();
+            });
+
+            $("#body").keyup(function(){
+                var obj = $(this);
+                var bodyLength = obj.val().length;
+
+                if(bodyLength < 8000){
+                    $("#body-content").text(parseInt(bodyLength));
+                }else{
+                    bwError("内容字数过多,请不要超过8000字!");
+                }
+            });
+        });
+        function changeAuthCode()
+        {
+            $("#vdimgck").attr("src",$("#vdimgck").attr('src')+'?');
+        }
+    </script>-->
+</head>
+
+<body>
+<!--头部开始-->
+<div id="tool">
+    <div class="tool_content">
+        <h2><a href="../index.html">
+            <!--<img src="https://static.duanwenxue.com/member/common/images/logo.png" align="absmiddle" alt="水墨世界" />-->
+            水墨世界首页
+        </a>
+        </h2>
+
+        <dl>
+            <dt>
+                <a href="user.html" class="member_base specnotice" > <img id="userImg1"  src="" /> <span id="userName1"></span> <i></i></a>
+
+                <ul>
+                    <li><a href="message.html">短消息</a></li>
+                    <li><a href="index.html">管理中心</a></li>
+                    <li><a href="user.html">我的主页</a></li>
+                    <li><a href="../logout">退　　出</a></li>
+                </ul>
+            </dt>
+        </dl>
+    </div>
+</div>
+<div class="tool_clear"></div>
+<script type="text/javascript">
+    $(function(){
+        //个人资料下拉
+        $(".tool_content dt").hover(
+            function(){
+                $(this).children("ul").show();
+            },
+            function(){
+                $(this).children("ul").hide();
+            }
+        );
+    });
+</script>
+<!--头部结束-->
+
+
+<!-- user_center_main 开始 -->
+<div class="user_center_main" id="offset_top">
+    <div class="main_container fl">
+        <div class="fl left relative">
+            <div>
+                <a href="javascript:qiandao();" id="sign_show_index" class="sign_show sign_show_index_has">签到</em></a>            </div>
+            <div class="hd">
+                <div class="info_lcol">
+                    <div class="u_pic">
+                        <img id="userImg2" src="" width="55" height="55" alt="" />
+                    </div>
+                    <div class="info_m">
+                        <div class="u_name" id="userName2"></div>
+                        <div class="lv" style="cursor:pointer;"><span id="lv_num"></span><span id="lv_span"></span></div>
+                    </div>
+                </div>
+                <div class="acco_info">
+                    <ul>
+                        <li>关注人气：<em id="renqi">0</em></li>
+                        <li id="yue">账户余额：0</li>
+                        <li id="jifen">我的积分：4,410<span class="tips_line"><a href="javascript:;" class="problem"></a><span class="tips i"><img src="https://static.duanwenxue.com/jifen.jpg"></span></span></li>
+                        <!--<li>可提现积分：4,310<span class="tips_line"><a href="javascript:;" class="problem"></a><span class="tips">积分提现只限于2017年10月之后的</span></span></li>-->
+                    </ul>
+                </div>
+                <div class="btn_write">
+                    <a href="article_add1.html" class="write_article" iframe="0"></a>
+                    <!--<a href="/member/diary_add.php" class="write_diary"></a>-->
+                </div>
+                <div class="btn_write"><a href="booksheif_list.html" style=" font-weight:bolder; border-radius:5px; background:#8DC61E; color:#FFF; width:100%; line-height:30px; text-align:center;">我的藏书架</a></div>
+
+
+                <!--<div class="btn_write"><a href="/member/story_add_book.php" style=" font-weight:bolder; border-radius:5px; background:#8DC61E; color:#FFF; width:100%; line-height:30px; text-align:center;">我要写小说</a></div>-->
+            </div>
+            <div class="bd">
+                <ul>
+                    <!--<li><a href="story_book.php">我的小说</a></li>-->
+                    <li><a href="content_list.html">我的文章</a></li>
+                    <!--<li><a href="content_list.php?channelid=17">我的日记</a></li>-->
+                    <!--<li><a href="rmbrecord_list.html">我的资产</a></li>-->
+                    <li><a href="message.html">短  消  息</a></li>
+                    <li><a href="comment.html">评论管理</a></li>
+                    <li><a href="feedback.html">留言管理</a></li>
+                    <li><a href="space.html">空间设置</a></li>
+                    <li><a href="profile.html">个人设置</a></li>
+                    <li><a href="user.html">我的主页</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+            <div class="fr right relative">
+                <div id="show_yezi" class="yezi_happy"></div>
+                <div class="list_box">
+                    <!--<h1 class="head"><a href="diary_add.php"><span>发日记</span></a><a href="content_list.php?channelid=1"><span>文章管理</span></a>发布文章</h1>-->
+                    <form method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="dopost" value="save" />
+                        <input type="hidden" name="channelid" value="1" />
+                        <input type="hidden" name="token"  value="" />
+                        <ul class="form">
+                            <li class="title">标题</li>
+                            <li class="input"><input class="i" name="title" id="title" type="text" /></li>
+                            <li class="title">内容</li>
+                            <li class="textarea"><textarea cols="50" rows="6" name="body" id="body"></textarea></li>
+                            <li class="title"><span id="body-content">0</span>/8000</li>
+                            <li class="title">分类</li>
+                            <li class="input">
+                                <select name='typeid' id='typeid' size='1'>
+                                    <option value='0' selected>请选择分类...</option>
+                                    <option value='现代诗歌' class='option2'>现代诗歌</option>
+                                    <option value='古风词韵' class='option2'>古风词韵</option>
+                                    <option value='经典诗词' class='option2'>经典诗词</option>
+                                    <option value='英语诗歌' class='option2'>英语诗歌</option>
+                                </select>
+                            </li>
+                            <li class="submit mt30">
+                                <a href="javascript:;" id="article_add_submit" class="btn"><span>&nbsp;立即发表&nbsp;</span></a><span class="hide" id="article_add_submit_msg">数据提交中,请勿重复提交</span>&nbsp;&nbsp;<input type="hidden" name="save_in_draft" id="save_in_draft" value="0" />
+                                <!--<a href="javascript:;" id="article_add_submit_to_draft" class="btn"><span>&nbsp;存到草稿箱&nbsp;</span></a><span class="hide" id="article_add_submit_to_draft_msg">数据提交中,请勿重复提交</span>&nbsp;&nbsp;-->
+                                <label><input type="radio" name="msource" id="yc" value="原创" checked="checked"/> 原创</label><label><input type="radio" name="msource" id="zz" value="转载"/> 转载</label>
+                            </li>
+                        </ul>
+                    </form>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        var getTypeid = '0';
+        $("#typeid option[value="+getTypeid+"]").attr("selected", true);
+    });
+</script>
+</div>
+</div>
+
+
+</body>
+</html>

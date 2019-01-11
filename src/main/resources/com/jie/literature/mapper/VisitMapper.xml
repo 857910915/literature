@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jie.literature.mapper.VisitMapper" >
+  <resultMap id="BaseResultMap" type="com.jie.literature.domain.Visit" >
+    <id column="visit_id" property="visitId" jdbcType="INTEGER" />
+    <result column="visit_uid" property="visitUid" jdbcType="INTEGER" />
+    <result column="visit_vuid" property="visitVuid" jdbcType="INTEGER" />
+    <result column="visit_createtime" property="visitCreatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    visit_id, visit_uid, visit_vuid, visit_createtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from visit
+    where visit_id = #{visitId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from visit
+    where visit_id = #{visitId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jie.literature.domain.Visit" >
+    insert into visit (visit_id, visit_uid, visit_vuid, 
+      visit_createtime)
+    values (#{visitId,jdbcType=INTEGER}, #{visitUid,jdbcType=INTEGER}, #{visitVuid,jdbcType=INTEGER}, 
+      #{visitCreatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jie.literature.domain.Visit" >
+    insert into visit
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="visitId != null" >
+        visit_id,
+      </if>
+      <if test="visitUid != null" >
+        visit_uid,
+      </if>
+      <if test="visitVuid != null" >
+        visit_vuid,
+      </if>
+      <if test="visitCreatetime != null" >
+        visit_createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="visitId != null" >
+        #{visitId,jdbcType=INTEGER},
+      </if>
+      <if test="visitUid != null" >
+        #{visitUid,jdbcType=INTEGER},
+      </if>
+      <if test="visitVuid != null" >
+        #{visitVuid,jdbcType=INTEGER},
+      </if>
+      <if test="visitCreatetime != null" >
+        #{visitCreatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jie.literature.domain.Visit" >
+    update visit
+    <set >
+      <if test="visitUid != null" >
+        visit_uid = #{visitUid,jdbcType=INTEGER},
+      </if>
+      <if test="visitVuid != null" >
+        visit_vuid = #{visitVuid,jdbcType=INTEGER},
+      </if>
+      <if test="visitCreatetime != null" >
+        visit_createtime = #{visitCreatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where visit_id = #{visitId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jie.literature.domain.Visit" >
+    update visit
+    set visit_uid = #{visitUid,jdbcType=INTEGER},
+      visit_vuid = #{visitVuid,jdbcType=INTEGER},
+      visit_createtime = #{visitCreatetime,jdbcType=TIMESTAMP}
+    where visit_id = #{visitId,jdbcType=INTEGER}
+  </update>
+
+  <select id="toSelectVisitList" resultType="Visit">
+    select * from visit where visit_vuid=#{visitVuid}
+  </select>
+
+  <select id="toSelectVisitList1" resultType="Visit">
+    select visit_uid from visit where visit_vuid=#{visitVuid} and visit_uid!=visit_vuid group by visit_uid
+  </select>
+</mapper>

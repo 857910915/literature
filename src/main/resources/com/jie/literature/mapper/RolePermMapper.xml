@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jie.literature.mapper.RolePermMapper" >
+  <resultMap id="BaseResultMap" type="com.jie.literature.domain.RolePerm" >
+    <id column="rp_id" property="rpId" jdbcType="INTEGER" />
+    <result column="rp_rid" property="rpRid" jdbcType="INTEGER" />
+    <result column="rp_pid" property="rpPid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    rp_id, rp_rid, rp_pid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from role_perm
+    where rp_id = #{rpId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from role_perm
+    where rp_id = #{rpId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jie.literature.domain.RolePerm" >
+    insert into role_perm (rp_id, rp_rid, rp_pid
+      )
+    values (#{rpId,jdbcType=INTEGER}, #{rpRid,jdbcType=INTEGER}, #{rpPid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jie.literature.domain.RolePerm" >
+    insert into role_perm
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rpId != null" >
+        rp_id,
+      </if>
+      <if test="rpRid != null" >
+        rp_rid,
+      </if>
+      <if test="rpPid != null" >
+        rp_pid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rpId != null" >
+        #{rpId,jdbcType=INTEGER},
+      </if>
+      <if test="rpRid != null" >
+        #{rpRid,jdbcType=INTEGER},
+      </if>
+      <if test="rpPid != null" >
+        #{rpPid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jie.literature.domain.RolePerm" >
+    update role_perm
+    <set >
+      <if test="rpRid != null" >
+        rp_rid = #{rpRid,jdbcType=INTEGER},
+      </if>
+      <if test="rpPid != null" >
+        rp_pid = #{rpPid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where rp_id = #{rpId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jie.literature.domain.RolePerm" >
+    update role_perm
+    set rp_rid = #{rpRid,jdbcType=INTEGER},
+      rp_pid = #{rpPid,jdbcType=INTEGER}
+    where rp_id = #{rpId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jie.literature.mapper.RoundsowMapper" >
+  <resultMap id="BaseResultMap" type="com.jie.literature.domain.Roundsow" >
+    <id column="roun_id" property="rounId" jdbcType="INTEGER" />
+    <result column="roun_img" property="rounImg" jdbcType="VARCHAR" />
+    <result column="rpun_type" property="rpunType" jdbcType="VARCHAR" />
+    <result column="roun_createtime" property="rounCreatetime" jdbcType="TIMESTAMP" />
+    <result column="roun_sort" property="rounSort" jdbcType="INTEGER" />
+    <result column="roun_status" property="rounStatus" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    roun_id, roun_img, rpun_type, roun_createtime, roun_sort, roun_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from roundsow
+    where roun_id = #{rounId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from roundsow
+    where roun_id = #{rounId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jie.literature.domain.Roundsow" >
+    insert into roundsow (roun_id, roun_img, rpun_type, 
+      roun_createtime, roun_sort, roun_status
+      )
+    values (#{rounId,jdbcType=INTEGER}, #{rounImg,jdbcType=VARCHAR}, #{rpunType,jdbcType=VARCHAR}, 
+      #{rounCreatetime,jdbcType=TIMESTAMP}, #{rounSort,jdbcType=INTEGER}, #{rounStatus,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jie.literature.domain.Roundsow" >
+    insert into roundsow
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rounId != null" >
+        roun_id,
+      </if>
+      <if test="rounImg != null" >
+        roun_img,
+      </if>
+      <if test="rpunType != null" >
+        rpun_type,
+      </if>
+      <if test="rounCreatetime != null" >
+        roun_createtime,
+      </if>
+      <if test="rounSort != null" >
+        roun_sort,
+      </if>
+      <if test="rounStatus != null" >
+        roun_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rounId != null" >
+        #{rounId,jdbcType=INTEGER},
+      </if>
+      <if test="rounImg != null" >
+        #{rounImg,jdbcType=VARCHAR},
+      </if>
+      <if test="rpunType != null" >
+        #{rpunType,jdbcType=VARCHAR},
+      </if>
+      <if test="rounCreatetime != null" >
+        #{rounCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rounSort != null" >
+        #{rounSort,jdbcType=INTEGER},
+      </if>
+      <if test="rounStatus != null" >
+        #{rounStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jie.literature.domain.Roundsow" >
+    update roundsow
+    <set >
+      <if test="rounImg != null" >
+        roun_img = #{rounImg,jdbcType=VARCHAR},
+      </if>
+      <if test="rpunType != null" >
+        rpun_type = #{rpunType,jdbcType=VARCHAR},
+      </if>
+      <if test="rounCreatetime != null" >
+        roun_createtime = #{rounCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rounSort != null" >
+        roun_sort = #{rounSort,jdbcType=INTEGER},
+      </if>
+      <if test="rounStatus != null" >
+        roun_status = #{rounStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where roun_id = #{rounId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jie.literature.domain.Roundsow" >
+    update roundsow
+    set roun_img = #{rounImg,jdbcType=VARCHAR},
+      rpun_type = #{rpunType,jdbcType=VARCHAR},
+      roun_createtime = #{rounCreatetime,jdbcType=TIMESTAMP},
+      roun_sort = #{rounSort,jdbcType=INTEGER},
+      roun_status = #{rounStatus,jdbcType=INTEGER}
+    where roun_id = #{rounId,jdbcType=INTEGER}
+  </update>
+</mapper>

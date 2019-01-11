@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>魅力诗歌</title>
+
+	<meta name="description" content="">
+
+	<meta name="keywords" content="">
+
+	<link href="/Public/home/css/style.css" rel="stylesheet">
+
+	<script type="text/javascript" src="/Public/home/js/jquery.js"></script>
+	<script src="/Public/home/js/jquery.luara.0.0.1.min.js"></script>
+	<script src="/Public/home/js/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+	<script src="/Public/home/js/jquery.slideBox.min.js" type="text/javascript"></script>
+	<script src="/Public/home/js/slider.js"></script>
+	<link rel="stylesheet" href="/Public/common/sweetalert-master/dist/sweetalert.css">
+	<script src="/Public/common/sweetalert-master/dist/sweetalert.min.js"></script>
+	<script type="text/javascript" src="/Public/home/js/language.js"></script>
+</head>
+
+<body>
+
+	<!--顶部-->
+
+	<div class="head">
+
+		<div class="head_content">
+
+			<div class="head_nav">
+
+				<ul>
+
+
+					<li><a href="/Public/login.html">登录</a></li>
+
+					<li><a href="/Public/register.html">注册</a></li>
+
+					<style>
+						.zh_click {
+							color: #757575 !important;
+						}
+					</style>
+
+
+					<li><a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体中文</a></li>
+
+					<li class="head_fan"><a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體中文</a></li>
+
+					<li><a href="http://j.zhsc.net/Index.html">切换到旧版</a></li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="logo clearfix">
+
+		<div class="logo1">
+
+			<a href="../index.html"><img src="/Public/home/images/index_logo1.png"></a>
+
+		</div>
+
+		<div class="logo2">
+
+			<img src="/Public/home/images/index_logo2.png">
+
+		</div>
+
+		<form action="/News/search_list.html" class="search">
+			<input type="text" name="keyword" value="" class="search_input" placeholder="请输入关键字">
+			<input type="submit" class="search_btn" value="搜索">
+		</form>
+
+	</div>
+	<div class="tan">
+		<div class="tan1 clearfix">
+			<span>温馨提示</span>
+			<a href="javascript:;" class="close">X</a>
+		</div>
+		<div class="tan2">
+			<p>繁体版文字由系统自动切换生成，部分浏览器不兼容，如有错误，请您理解。</p>
+		</div>
+	</div>
+
+	<div class="zhu_content">
+
+		<form id="zhuce" style="height: 580px;" action="/Public/register.html" method="post" onSubmit="return check();">
+
+			<div class="zhu_bt">
+
+				<span>账号注册</span>
+
+			</div>
+
+			<div class="zhu_input">
+
+				<label>账号：</label>
+
+				<input type="text" id="userAccount" name="username">
+
+				<span id="span1">注册成功后可使用该账号登录</span>
+
+			</div>
+
+			<div class="zhu_input">
+
+				<label>验证码：</label>
+
+				<input type="text" id="yanzhen" name="yanzhen" style="width: 100px;">
+				<img src="../code" id="yanzhen_pic" onclick='this.src=this.src+"?c="+Math.random()' style="width: 100px; height: 35px; vertical-align: bottom">
+				<span id="span3">点击图片可以更换验证码</span>
+
+			</div>
+
+			<!--<div class="zhu_input">-->
+
+				<!--<label>短信验证码：</label>-->
+
+				<!--<input type="text" name="code" class="input2">-->
+
+				<!--<a href="javascript:;" id="yzm_btn">点击获取</a>-->
+
+				<!--<span>免费获取短信验证码</span>-->
+
+			<!--</div>-->
+
+			<div class="zhu_input">
+
+				<label>设置密码：</label>
+
+				<input type="password" id="password" name="password">
+
+				<span id="span2">6-16位，英文、数字或常用符号</span>
+
+			</div>
+
+			<div class="xie clearfix">
+
+				<input type="checkbox" class="tong" id="sure" checked>同意<a href="javascript:;">《水墨世界服务协议》</a>
+
+			</div>
+
+			<div class="zhu_suc">
+
+				<a href="javascript:;" id="toRegister">立即注册</a>
+
+			</div>
+
+		</form>
+
+	</div>
+	<script src="myjs/register.js"></script>
+	<!--底部-->
+	<style>
+		.cnzz img {
+			display: inherit !important;
+			padding: 0 !important;
+			width: auto !important;
+			height: auto !important;
+		}
+	</style>
+	<div class="footer">
+
+		<a href=""><img src="/Public/home/images/index_logo4.png"></a>
+
+		<p>主办：诗词中国组委会| 京ICP备15020098号 &nbsp;&nbsp;| Copyright@诗词中国 咨询电话：010-63260766&nbsp;&nbsp;<span class="cnzz">
+				<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1260596846'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1260596846%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span></p>
+		<div class="ma">
+			<font>扫码关注有礼</font><img src="/Public/home/images/erweima.jpg"></div>
+
+	</div>
+	<div style="text-align:center;margin-top:10px;">
+		<a style="width:83px;height:65px;" key="5a09030c12c3d567cba9e9d3" logo_size="83x30" logo_type="common" href="http://www.anquan.org">
+			<script
+			 src="//static.anquan.org/static/outer/js/aq_auth.js"></script></a>
+	</div>
+	<style>
+		.footer {
+			position: relative;
+		}
+
+		.footer .ma {
+			width: 1200px;
+			height: 145px;
+			position: absolute;
+			left: 50%;
+			margin-left: -600px;
+			top: 2px;
+		}
+
+		.footer .ma font {
+			display: block;
+			font-size: 14px;
+			color: #fff;
+			text-align: right;
+			margin-top: 5px;
+			margin-right: 8px;
+		}
+
+		.footer .ma img {
+			display: block;
+			float: right;
+			width: 100px;
+			height: 100px;
+			padding-top: 0;
+			margin-top: 10px;
+		}
+	</style>
+	<script type="text/javascript">
+
+		$(function () {
+
+			$(".news_li").mouseover(function () {
+
+				$(".news_box").show();
+
+			});
+
+			$(".news_li").mouseleave(function () {
+
+				$(".news_box").hide();
+
+			});
+
+			$(".left").luara({ width: "800", height: "400", interval: 4500, selected: "seleted", deriction: "left" });
+
+			$(".main4 li").mouseover(function () {
+
+				$(this).find(".biji").show();
+
+			});
+
+			$(".main4 li").mouseleave(function () {
+
+				$(this).find(".biji").hide();
+
+			});
+
+			$('.main5_shi_ren li').mouseover(function () {
+
+				$('.main5_shi_jj').hide();
+
+				var main5_shi_jj_i = $('.main5_shi_ren li').index($(this));
+
+				$('.main5_shi_jj').eq(main5_shi_jj_i).show();
+
+			});
+
+			$(".head_fan").click(function () {
+
+				$(".tan").show();
+
+			});
+
+			$(".close").click(function () {
+
+				$(".tan").hide();
+
+			});
+
+		});
+
+	</script>
+
+	<script type="text/javascript">
+		// function refesh() {
+		// 	var timenow = new Date().getTime();
+		// 	$('#yanzhen_pic').attr('src', "../valid/code");
+		// }
+		// function zhuce_func() {
+		//
+		// 	var f = $('#zhuce');
+		//
+		// 	$.post(f.attr('action'), f.serialize(), function (v) {
+		//
+		// 		if (v.status) {
+		//
+		// 			swal({
+		//
+		// 				'title': '',
+		//
+		// 				'text': v.info,
+		//
+		// 				'type': 'success'
+		//
+		// 			}, function () {
+		//
+		// 				window.location.href = v.url;
+		//
+		// 			});
+		//
+		// 		} else {
+		//
+		// 			swal('', v.info, 'error');
+		//
+		// 		}
+		//
+		// 	}, 'json');
+		//
+		// }
+
+
+
+		var sta = 0;
+
+		$('#yzm_btn').click(function () {
+			if (sta == 0) {
+				var mobile = $('#mobile').val();
+				var yanzhen = $('#yanzhen').val();
+				$.post("/Public/sendcode.html", { mobile: mobile, type: 1, yanzhen: yanzhen }, function (v) {
+					if (v.status) {
+						swal('', v.info, 'success');
+						var timeout = 60;
+						var int = setInterval(function () {
+							if (timeout >= 0) {
+								var txt = "剩余" + timeout + "秒";
+								sta = 1;
+							} else {
+								clearInterval(int);
+								var txt = "点击获取";
+								sta = 0;
+							}
+							timeout--;
+							$("#yzm_btn").html(txt);
+						}, 1000);
+					} else {
+						swal('', v.info, 'error');
+					}
+				}, 'json');
+			}
+		});
+
+
+
+		$(function () {
+
+			$(".head_fan").click(function () {
+
+				$(".tan").show();
+
+			});
+
+			$(".close").click(function () {
+
+				$(".tan").hide();
+
+			});
+
+		});
+
+	</script>

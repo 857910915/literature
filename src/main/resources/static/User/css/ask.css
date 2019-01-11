@@ -1,0 +1,36 @@
+@charset "gb2312";
+
+.ask_fixbox{ position:absolute; z-index:1000000; top:0; left:0; width:100%; height:100%;}
+.ask_mask{ position:absolute; z-index:10; left:0; top:0; width:100%; height:100%; background-color:#000; opacity:0.8; filter:alpha(opacity=80);}
+.ask_body{ position:absolute; z-index:20; left:50%; top:0; width:752px; height:100%; margin-left:-376px;}
+.ask_banner{ width:752px; height:290px; overflow:hidden; background:url(../images/asktopbanner.png) no-repeat top center; text-align:right;}
+
+.ask_content{ width:733px; margin:0 auto; margin-top:20px;}
+.ask_content .ask_bgup{ width:704px; height:79px; margin:0 auto; overflow:hidden; background:url(../images/askbgup.png) no-repeat top center;}
+.ask_content .ask_bgup .asktit{ text-align:center; height:78px; line-height:78px; overflow:hidden; text-align:center; background:url(../images/asktit.png) no-repeat center center; border-bottom:1px solid #f7e6d2; text-indent:-9999px; width:590px; margin:0 auto;}
+.ask_content .ask_bgcenter{ width:698px; margin:0 auto; background:url(../images/askbgcenter.png) repeat-y top center; font-family:"Î¢ÈíÑÅºÚ", "ËÎÌå";}
+.ask_content .ask_bgcenter .askquestions{ width:550px; margin:0 auto; padding:20px; color:#995b47;}
+.ask_content .ask_bgcenter .askquestions .asktit{ font-size:20px; line-height:1.4em; margin-bottom:10px;}
+.ask_content .ask_bgcenter .askquestions .askcheck{ height:217px; overflow:auto;}
+.ask_content .ask_bgcenter .askquestions p{ font-size:18px; padding:8px 0; line-height:26px; cursor:pointer;}
+.ask_content .ask_bgcenter .askquestions p i{ display:inline-block; background:url(../images/icon_askcheck.png) no-repeat; width:17px; height:17px; margin-right:10px; overflow:hidden; margin-top:4px;}
+.ask_content .ask_bgcenter .askquestions p i.ico_askradio{ background-position:0 0;}
+.ask_content .ask_bgcenter .askquestions p.on i.ico_askradio{ background-position: top right;}
+.ask_content .ask_bgcenter .askquestions p i.ico_askcheck{ background-position:bottom left;}
+.ask_content .ask_bgcenter .askquestions p.on i.ico_askcheck{ background-position:bottom right;}
+.ask_content .ask_bgcenter .askquestions p input.otheript{ display:inline-block; height:25px; line-height:25px; border:0px; border-bottom:1px solid #995b47; background-color:transparent; font-size:16px; color:#333; outline:none; padding:0 5px; width:260px; font-family:"Î¢ÈíÑÅºÚ", "ËÎÌå";}
+.ask_content .ask_bgcenter .askquestions .asktextarea{ display:block; width:526px; border:2px solid #995b47; border-radius:4px; padding:10px; line-height:28px; height:84px; font-size:18px; color:#995b47; font-family:"Î¢ÈíÑÅºÚ", "ËÎÌå"; margin-top:10px; margin-bottom:30px; outline:none;}
+.ask_content .ask_bgcenter .askbtnline{ position:relative; z-index:1; padding:30px 0; text-align:center; width:590px; margin:0 auto; border-top:1px solid #f7e6d2;}
+.ask_content .ask_bgcenter .askbtnline .askbtn{ display:inline-block; height:40px; line-height:40px; width:150px; text-align:center; background-color:#ff476d; color:#fff; font-size:18px; border-radius:20px; margin:0 10px;}
+.ask_content .ask_bgdown{ width:733px; height:258px; margin:0 auto; overflow:hidden; background:url(../images/askbgdown.png) no-repeat top center; margin-top:-170px;}
+
+/*ÎÊ´ð¿ªÊ¼*/
+.ask_start_word,.ask_start_btn{ text-align:center; padding-top:20px;}
+.ask_start_btn{ margin-top:50px;}
+.ask_start_btn img{ cursor:pointer;}
+
+.ask_content .ask_bgcenter .ask_end_pic{ text-align:center;}
+.ask_content .ask_bgcenter .ask_end_pic img{ margin-top:-30px;}
+.ask_content .ask_bgcenter .askThx{ text-align:center; font-size:26px; color:#995b47; padding:20px 0 30px;}
+
+.onequestion{ display:none;}

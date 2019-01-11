@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jie.literature.mapper.MassageMapper" >
+  <resultMap id="BaseResultMap" type="com.jie.literature.domain.Massage" >
+    <id column="msg_id" property="msgId" jdbcType="INTEGER" />
+    <result column="msg_suid" property="msgSuid" jdbcType="INTEGER" />
+    <result column="msg_text" property="msgText" jdbcType="VARCHAR" />
+    <result column="msg_createtime" property="msgCreatetime" jdbcType="TIMESTAMP" />
+    <result column="msg_ruid" property="msgRuid" jdbcType="INTEGER" />
+    <result column="msg_status" property="msgStatus" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    msg_id, msg_suid, msg_text, msg_createtime, msg_ruid, msg_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from massage
+    where msg_id = #{msgId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from massage
+    where msg_id = #{msgId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jie.literature.domain.Massage" >
+    insert into massage (msg_id, msg_suid, msg_text, 
+      msg_createtime, msg_ruid, msg_status
+      )
+    values (#{msgId,jdbcType=INTEGER}, #{msgSuid,jdbcType=INTEGER}, #{msgText,jdbcType=VARCHAR}, 
+      #{msgCreatetime,jdbcType=TIMESTAMP}, #{msgRuid,jdbcType=INTEGER}, #{msgStatus,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jie.literature.domain.Massage" >
+    insert into massage
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="msgId != null" >
+        msg_id,
+      </if>
+      <if test="msgSuid != null" >
+        msg_suid,
+      </if>
+      <if test="msgText != null" >
+        msg_text,
+      </if>
+      <if test="msgCreatetime != null" >
+        msg_createtime,
+      </if>
+      <if test="msgRuid != null" >
+        msg_ruid,
+      </if>
+      <if test="msgStatus != null" >
+        msg_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="msgId != null" >
+        #{msgId,jdbcType=INTEGER},
+      </if>
+      <if test="msgSuid != null" >
+        #{msgSuid,jdbcType=INTEGER},
+      </if>
+      <if test="msgText != null" >
+        #{msgText,jdbcType=VARCHAR},
+      </if>
+      <if test="msgCreatetime != null" >
+        #{msgCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="msgRuid != null" >
+        #{msgRuid,jdbcType=INTEGER},
+      </if>
+      <if test="msgStatus != null" >
+        #{msgStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jie.literature.domain.Massage" >
+    update massage
+    <set >
+      <if test="msgSuid != null" >
+        msg_suid = #{msgSuid,jdbcType=INTEGER},
+      </if>
+      <if test="msgText != null" >
+        msg_text = #{msgText,jdbcType=VARCHAR},
+      </if>
+      <if test="msgCreatetime != null" >
+        msg_createtime = #{msgCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="msgRuid != null" >
+        msg_ruid = #{msgRuid,jdbcType=INTEGER},
+      </if>
+      <if test="msgStatus != null" >
+        msg_status = #{msgStatus,jdbcType=INTEGER},
+      </if>
+    </set>
+    where msg_id = #{msgId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jie.literature.domain.Massage" >
+    update massage
+    set msg_suid = #{msgSuid,jdbcType=INTEGER},
+      msg_text = #{msgText,jdbcType=VARCHAR},
+      msg_createtime = #{msgCreatetime,jdbcType=TIMESTAMP},
+      msg_ruid = #{msgRuid,jdbcType=INTEGER},
+      msg_status = #{msgStatus,jdbcType=INTEGER}
+    where msg_id = #{msgId,jdbcType=INTEGER}
+  </update>
+  <select id="toSelectAllMsgList" resultType="Massage">
+    select * from massage where 1=1
+    <if test="msgRuid!=null">
+      and msg_ruid=#{msgRuid}
+    </if>
+    <if test="msgStatus!=null">
+      and msg_status=#{msgStatus}
+    </if>
+      order by msg_createtime desc
+  </select>
+
+</mapper>

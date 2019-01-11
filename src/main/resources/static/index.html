@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>魅力诗歌——水墨世界</title>
+
+	<meta name="description" content="">
+
+	<meta name="keywords" content="">
+
+	<link href="/Public/home/css/style.css" rel="stylesheet">
+	<script type="text/javascript" src="/Public/home/js/jquery.js"></script>
+	<script src="/Public/home/js/jquery.luara.0.0.1.min.js"></script>
+	<script src="/Public/home/js/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+	<script src="/Public/home/js/jquery.slideBox.min.js" type="text/javascript"></script>
+	<script src="/Public/home/js/slider.js"></script>
+	<link rel="stylesheet" href="/Public/common/sweetalert-master/dist/sweetalert.css">
+	<script src="/Public/common/sweetalert-master/dist/sweetalert.min.js"></script>
+	<script type="text/javascript" src="/Public/home/js/language.js"></script>
+	<script type="text/javascript" src="/Shige/myjs/index.js"></script>
+</head>
+
+<body>
+
+<!--顶部-->
+
+<div class="head">
+
+	<div class="head_content">
+
+		<div class="head_nav">
+
+			<ul>
+				<li><a href="/Public/login.html">登录</a></li>
+
+				<li><a href="/Public/register.html">注册</a></li>
+
+				<style>
+					.zh_click {
+						color: #757575 !important;
+					}
+				</style>
+
+
+				<li><a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体中文</a></li>
+
+				<li class="head_fan"><a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體中文</a></li>
+
+
+			</ul>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div class="logo clearfix">
+
+	<div class="logo1">
+
+		<a href="index.html"><img src="/Public/home/images/index_logo1.png"></a>
+
+	</div>
+
+	<div class="logo2">
+
+		<img src="/Public/home/images/index_logo2.png">
+
+	</div>
+
+	<form action="/News/search_list.html" class="search">
+		<input type="text" name="keyword" value="" class="search_input" placeholder="请输入关键字">
+		<input type="submit" class="search_btn" value="搜索">
+	</form>
+
+</div>
+<div class="tan">
+	<div class="tan1 clearfix">
+		<span>温馨提示</span>
+		<a href="javascript:;" class="close">X</a>
+	</div>
+	<div class="tan2">
+		<p>繁体版文字由系统自动切换生成，部分浏览器不兼容，如有错误，请您理解。</p>
+	</div>
+</div>
+
+
+<style>
+	.shi_all2_con,
+	.shi_all3_con {
+		overflow: hidden;
+	}
+</style>
+<div class="nav">
+	<ul class="clearfix">
+		<li><a href="index.html" class="hover">首页</a></li>
+		<li class="news_li"><a href="/Shige/shici.html">诗词欣赏</a>
+			<div class="news_box">
+				<a href="/Shige/xiandai/xiandai.html">现代诗歌</a>
+				<a href="/Shige/gufeng/gufeng.html">古风词韵</a>
+				<a href="/Shige/jingdian/jingdian.html">经典诗词</a>
+				<a href="/Shige/yingyu/yingyu.html">英语诗歌</a>
+			</div>
+		</li>
+		<li><a href="">专题展示</a></li>
+		<li><a target="_blank" href="http://bbs.zhsc.net/">诗词论坛</a></li>
+		<li><a target="_blank" href="chat.ftl">诗友会</a></li>
+		<li><a href="/Shiyi/index.html">诗意生活</a></li>
+		<li><a target="_blank" href="User/index.html">个人中心</a></li>
+		<li><a target="_blank" href="/Houtai/index.html">后台管理</a></li>
+	</ul>
+</div>
+<!--<script type="text/javascript" src="/Public/home/js/main.js"></script>-->
+
+
+<!--banner轮播-->
+
+<div class="main1 clearfix">
+
+	<div class="left">
+		<ul>
+			<li>
+				<img src="/Public/upload/pic/87491c44073753ca53201d0a5f40f2c0.png" alt="魅力诗歌" />
+				<div class="zh_wen">
+					<span>魅力诗歌</span>
+				</div>
+				</a>
+			</li>
+			<li>
+				<img src="/Public/upload/pic/9822bcc77dce5e6bd32568d839aa28ee.jpg" alt="水墨世界" />
+				<div class="zh_wen">
+					<span>水墨世界</span>
+				</div>
+				</a>
+			</li>
+		</ul>
+		<ol>
+			<li> </li>
+			<li> </li>
+		</ol>
+	</div>
+
+	<div class="right">
+		<div class="zhuanti_box">
+			<div id="slideBox2">
+				<div class="J_slide">
+					<ul class="J_slide_trigger">
+						<li class=""><a href="javascript:">新诗推荐</a></li>
+					</ul>
+					<div class="J_slide_clip">
+						<ul class="J_slide_list">
+							<li class="J_slide_item" id="tuijian">
+								<!--<li>-->
+									<!--<a target="_blank" href=""></a>-->
+									<!--&nbsp;&nbsp;&nbsp;-->
+									<!--<a target="_blank" href=""></a>-->
+								<!--</li>-->
+
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--<script type="text/javascript">-->
+	<!--new Tab('.J_tab', { auto: true });-->
+	<!--new Slide('#slideBox2', { index: 1, effect: 'slide', firstDelay: 8 });-->
+
+	<!--</script>-->
+</div>
+
+
+<div class="main2">
+
+	<div class="main2_content clearfix">
+
+		<div class="left">
+
+			<div class="index_xy_bt clearfix">
+
+				<img src="/Public/home/images/index_logo3.png">
+
+				<ul class="clearfix">
+
+					<li><a href="/Xueyuan/category/tid/1.html" class="hover">新手入门</a></li>
+
+					<li><a href="/Xueyuan/category/tid/2.html">诗词鉴赏</a></li>
+
+					<li><a href="/Xueyuan/category/tid/3.html">创作指导</a></li>
+
+					<li><a href="/Xueyuan/gelvjc.html">格律检测</a></li>
+
+				</ul>
+
+			</div>
+
+			<div class="index_xy_main">
+
+				<div class="index_xs_bt clearfix">
+
+					<span>体裁篇</span>
+
+					<a href="/Xueyuan/category/tid/1/stid/4.html">更多>></a>
+
+				</div>
+
+				<ul>
+					<li><a target="_blank" href="../Xueyuan/view/aid/140.html">何为古体诗</a><span>2018-08-15</span></li>
+					<li><a target="_blank" href="../Xueyuan/view/aid/141.html">何为近体诗</a><span>2018-08-15</span></li>
+					<li><a target="_blank" href="../Xueyuan/view/aid/142.html">近体诗的格律是怎样的</a><span>2018-08-15</span></li>
+				</ul>
+
+			</div>
+
+			<div class="index_xy_main">
+
+				<div class="index_xs_bt clearfix">
+
+					<span>声律篇</span>
+
+					<a href="/Xueyuan/category/tid/1/stid/5.html">更多>></a>
+
+				</div>
+
+				<ul>
+					<li><a target="_blank" href="/Xueyuan/view/aid/180.html">何为相对律、相粘律</a><span>2018-08-15</span></li>
+					<li><a target="_blank" href="/Xueyuan/view/aid/181.html">何为三平调</a><span>2018-08-15</span></li>
+					<li><a target="_blank" href="/Xueyuan/view/aid/182.html">何为词谱</a><span>2018-08-15</span></li>
+				</ul>
+
+			</div>
+
+			<div class="index_xy_main">
+
+				<div class="index_xs_bt clearfix">
+
+					<span>用韵篇</span>
+
+					<a href="/Xueyuan/category/tid/1/stid/6.html">更多>></a>
+
+				</div>
+
+				<ul>
+
+					<li><a target="_blank" href="/Xueyuan/view/aid/160.html">何为平水韵</a><span>2018-08-15</span></li>
+					<li><a target="_blank" href="/Xueyuan/view/aid/161.html">何为押韵</a><span>2018-08-15</span></li>
+					<li><a target="_blank" href="/Xueyuan/view/aid/162.html">《切韵》是怎么产生的</a><span>2018-08-15</span></li>
+				</ul>
+
+			</div>
+
+			<div class="index_xy_main">
+
+				<div class="index_xs_bt clearfix">
+
+					<span>对仗篇</span>
+
+					<a href="/Xueyuan/category/tid/1/stid/7.html">更多>></a>
+
+				</div>
+
+				<ul>
+					<li><a target="_blank" href="/Xueyuan/view/aid/206.html">太古遗音（五古对仗篇）</a><span>2018-08-15</span></li>
+					<li><a target="_blank" href="/Xueyuan/view/aid/195.html">诗词中对仗的发展源流如何</a><span>2018-08-15</span></li>
+					<li><a target="_blank" href="/Xueyuan/view/aid/196.html">对仗有哪些基本要求</a><span>2018-08-15</span></li>
+				</ul>
+
+			</div>
+
+		</div>
+
+		<div class="right">
+
+			<div class="right_content">
+
+				<div class="index_all_bt1">
+
+					<span><a href="/Index/shi_more.html">诗词大全</a></span>
+
+					<font> </font>
+
+				</div>
+
+				<div class="shi_all1 clearfix">
+					<ul class="qh_nav">
+						<li><a href="javascript:;" class="hover">不限<input type="hidden" value="no"></a></li>
+						<li><a href="javascript:;">作者<input type="hidden" value="shiren"></a></li>
+						<li><a href="javascript:;">朝代<input type="hidden" value="chaodai"></a></li>
+						<li><a href="javascript:;">主题词<input type="hidden" value="theme"></a></li>
+						<li><a href="javascript:;">作品集<input type="hidden" value="zuopin"></a></li>
+					</ul>
+					<form id="so_form" action="/Index/shi_list.html" method="get">
+						<input type="hidden" id="ss_type" name="typep" value="no">
+						<input type="text" id="keyword" name="keyword" class="shi_input" placeholder="请输入关键字">
+						<input type="submit" class="shi_btn" value="搜索">
+					</form>
+				</div>
+				<div class="reci clearfix">
+					<ul>
+						<li><span>搜索热词 : </span></li>
+						<li><a href="javascript:;" onclick="ht_so('雨')">雨</a></li>
+						<li><a href="javascript:;" onclick="ht_so('夏')">夏</a></li>
+						<li><a href="javascript:;" onclick="ht_so('水')">水</a></li>
+					</ul>
+				</div>
+
+				<div class="shi_bt1 clearfix">
+					<span>主题搜索</span>
+					<a target="_blank" href="/Index/shi_more.html">更多>></a>
+				</div>
+				<div class="shi_all2">
+					<ul class="clearfix shi_nav22">
+						<li><a href="javascript:;" class="hover">风景名胜</a></li>
+						<li><a href="javascript:;">境遇命运</a></li>
+						<li><a href="javascript:;">仪式活动</a></li>
+						<li><a href="javascript:;">针砭时弊</a></li>
+					</ul>
+					<div class="shi_all2_con" style="display: block;">
+						<a target="_blank" href="/Index/shi_list/type/theme/id/117.html">嵩山</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/116.html">草原</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/115.html">大漠</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/114.html">三峡</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/113.html">江南</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/112.html">滕王阁</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/111.html">黄鹤楼</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/110.html">岳阳楼</a>
+					</div>
+					<div class="shi_all2_con" style="display: none;">
+						<a target="_blank" href="/Index/shi_list/type/theme/id/186.html">咏史</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/181.html">抒怀</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/180.html">仕途</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/179.html">羁旅</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/178.html">壮志未酬</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/177.html">隐逸</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/176.html">品格</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/175.html">哲理</a>
+					</div>
+					<div class="shi_all2_con" style="display: none;">
+						<a target="_blank" href="/Index/shi_list/type/theme/id/189.html">佛事</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/188.html">游仙</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/187.html">游戏</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/170.html">舞蹈</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/169.html">音乐</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/168.html">学习</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/167.html">读书</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/166.html">垂钓</a>
+					</div>
+					<div class="shi_all2_con" style="display: none;">
+						<a target="_blank" href="/Index/shi_list/type/theme/id/157.html">感时</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/156.html">怨刺</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/155.html">忧民</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/154.html">爱国</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/92.html">战争</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/91.html">忧国</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/90.html">灾难</a>
+						<a target="_blank" href="/Index/shi_list/type/theme/id/89.html">暴力</a>
+					</div>
+				</div>
+				<div class="shi_bt2 clearfix">
+					<span>历代作者</span>
+					<a target="_blank" href="/Index/shi_more.html">更多>></a>
+				</div>
+				<div class="shi_all3">
+					<ul class="clearfix shi_nav33">
+						<li><a href="javascript:;" class="hover">先秦两汉</a></li>
+						<li><a href="javascript:;">魏晋南北朝</a></li>
+						<li><a href="javascript:;">隋唐</a></li>
+						<li><a href="javascript:;">五代十国</a></li>
+					</ul>
+					<div class="shi_all3_con" style="display: block;">
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1005/name/%E5%88%98%E6%A1%A2.html">刘桢</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1005/name/%E5%AE%8B%E5%AD%90%E4%BE%AF.html">宋子侯</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1005/name/%E5%AE%8B%E7%8E%89.html">宋玉</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1005/name/%E5%B1%88%E5%8E%9F.html">屈原</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1005/name/%E5%BE%90%E6%B7%91.html">徐淑</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1005/name/%E6%97%A0%E5%90%8D%E6%B0%8F.html">无名氏</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1005/name/%E6%9B%B9%E6%A4%8D.html">曹植</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1005/name/%E6%9C%9D%E9%B2%9C%E6%B4%A5%E5%8D%92%E9%9C%8D%E9%87%8C%E5%AD%90%E9%AB%98%E5%A6%BB%E4%B8%BD%E7%8E%89.html">朝鲜津卒霍...</a>
+					</div>
+					<div class="shi_all3_con" style="display: none;">
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1013/name/%E5%88%98%E4%B9%89%E5%BA%86.html">刘义庆</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1013/name/%E5%88%98%E4%B9%89%E7%AC%A6.html">刘义符</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1013/name/%E5%88%98%E4%BB%A4%E5%A8%B4.html">刘令娴</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1013/name/%E5%8D%97%E6%9C%9D%E6%97%A0%E5%90%8D%E6%B0%8F.html">南朝无名氏</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1013/name/%E5%8D%A2%E6%80%9D%E9%81%93.html">卢思道</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1013/name/%E5%B7%A6%E6%A3%BB.html">左棻</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1013/name/%E5%BA%BE%E8%82%A9%E5%90%BE.html">庾肩吾</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1013/name/%E6%97%A0%E5%90%8D%E6%B0%8F.html">无名氏</a>
+					</div>
+					<div class="shi_all3_con" style="display: none;">
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1029/name/%E4%B8%81%E4%BB%99%E8%8A%9D.html">丁仙芝</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1029/name/%E4%B8%81%E4%BD%8D.html">丁位</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1029/name/%E4%B8%81%E5%85%83%E5%92%8C.html">丁元和</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1029/name/%E4%B8%81%E5%B1%85%E6%99%A6.html">丁居晦</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1029/name/%E4%B8%81%E6%B3%BD.html">丁泽</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1029/name/%E4%B8%81%E7%A8%9C.html">丁稜</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1029/name/%E4%B8%83%E5%B2%81%E5%A5%B3%E5%AD%90.html">七岁女子</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1029/name/%E4%B8%87%E4%BF%9F%E9%80%A0.html">万俟造</a>
+					</div>
+					<div class="shi_all3_con" style="display: none;">
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1022/name/%E5%AD%99%E5%85%89%E5%AE%AA.html">孙光宪</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1022/name/%E5%B0%B9%E9%B9%97.html">尹鹗</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1022/name/%E5%BC%A0%E6%B3%8C.html">张泌</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1022/name/%E6%9D%8E%E7%8F%A3.html">李珣</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1022/name/%E6%AF%9B%E6%96%87%E9%94%A1.html">毛文锡</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1022/name/%E6%AF%9B%E7%86%99%E9%9C%87.html">毛熙震</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1022/name/%E7%89%9B%E5%B3%A4.html">牛峤</a>
+						<a target="_blank" href="/Index/shi_list/type/shiren/chaodai/1022/name/%E7%89%9B%E5%B8%8C%E6%B5%8E.html">牛希济</a> </div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+<!--今日推荐-->
+
+<div class="main3">
+
+	<div class="main3_content">
+
+		<div class="main3_bt1">
+
+			<img src="/Public/home/images/index_bt1.png">
+
+		</div>
+
+		<div class="left">
+
+			<div class="main3_bt2 clearfix">
+
+				<span>诗词推荐</span>
+
+				<img src="/Public/home/images/index_tj_img1.png">
+				<a target="_blank" href="http://cd.zhsc.net/">更多>></a>
+
+			</div>
+
+			<div class="slide">
+
+				<div class="slide_box">
+
+					<div class="imgs">
+
+						<a target="_blank" href="http://cd.zhsc.net/person/mypoetrydetail.aspx?userid=&pageid=1711">
+
+							<!--<img src="">-->
+
+							<div class="slide_shi" style="color: #000!important">
+
+								<span>采桑子.秋荷</span>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 采桑子.秋荷&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 李知了西风斜柳摇波影，飞絮游丝。雾绕烟迷，袅袅凝霜锁瘦池。娇黄莲叶生寒露，凋碧芳菲。多少相思？留待枯枝泣别离。&nbsp;&nbsp;
+							</div>
+
+						</a>
+
+					</div>
+					<div class="imgs">
+
+						<a target="_blank" href="http://cd.zhsc.net/person/mypoetrydetail.aspx?userid=&pageid=642">
+
+							<!--<img src="">-->
+
+							<div class="slide_shi" style="color: #000!important">
+
+								<span>七律·秋近</span>
+
+								神清气朗天高处，舒卷无形又一秋。半点新黄随季上，万千墨绿就风柔。晨来剪破霜成梦，夜落铺张夕染舟。渐醉风声翻册急，残荷雨径可知不。
+							</div>
+
+						</a>
+
+					</div>
+					<div class="imgs">
+
+						<a target="_blank" href="http://cd.zhsc.net/person/mypoetrydetail.aspx?userid=&pageid=544">
+
+							<!--<img src="">-->
+
+							<div class="slide_shi" style="color: #000!important">
+
+								<span>南乡子 秋花</span>
+
+								陌上泛红英，虽错三春也可倾。寒露湿来花更艳，层层，多少相思叠得成。何意苦相争，已是西风不解情。暮里且开晨且落，谁凭，昨夜星辰枉自听。
+							</div>
+
+						</a>
+
+					</div>
+				</div>
+
+				<div class="slide-left" onclick="slide_left()">
+
+					<img src="/Public/home/images/index_prev1.png">
+
+				</div>
+
+				<div class="slide-right" onclick="slide_right()">
+
+					<img src="/Public/home/images/index_next1.png">
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="right">
+
+			<div class="mian3_bt3 clearfix">
+
+				<span>诗人推荐</span>
+
+				<img src="/Public/home/images/index_tj_img2.png">
+
+				<a target="_blank" href="#">更多>></a>
+
+			</div>
+
+			<ul class="clearfix" id="shiren">
+
+				<!--<li>-->
+					<!--<img src="/Public/upload/pic/lzyq.jpg">-->
+					<!--<div class="shi_people1">-->
+						<!--<p>浪子一秋</p>-->
+					<!--</div>-->
+					<!--<div class="shi_people2">-->
+						<!--<p>生活不止眼前的苟且，还有诗和远方</p>-->
+					<!--</div>-->
+					<!--</a>-->
+				<!--</li>-->
+
+			</ul>
+
+		</div>
+
+	</div>
+
+</div>
+
+<!--专题展示-->
+
+<div class="main4">
+
+	<div class="main4_content clearfix">
+
+		<div class="main4_bt">
+
+			<img src="/Public/home/images/index_bt2.png">
+
+		</div>
+
+		<div class="more">
+
+			<a href="/Zhuanti/category/type/1.html">更多>></a>
+
+		</div>
+
+		<ul class="clearfix">
+			<li>
+				<img src="/Public/upload/pic/e23685aa1391e7bd14caeab5c0925b94.jpg">
+				<div class="biji">
+					<a href="/Zhuanti/zt_index/id/19.html"><p>待定</p></a>
+				</div>
+				<span>现代诗歌</span>
+			</li>
+			<li>
+				<img src="/Public/upload/pic/5d87f87ed16312ef99adcae9d1a76351.jpg">
+				<div class="biji">
+					<a href="/Zhuanti/zt_index/id/8.html"><p>待定</p></a>
+				</div>
+				<span>古风词韵</span>
+			</li>
+			<li>
+				<img src="/Public/upload/pic/ffef2104c5aad9236507dc2dcd0987b3.jpg">
+				<div class="biji">
+					<a href="/Zhuanti/zt_index/id/7.html"><p>待定</p></a>
+				</div>
+				<span>英文诗歌</span>
+			</li>
+		</ul>
+
+	</div>
+
+</div>
+
+
+
+<!--诗友会-->
+
+<div class="main6">
+
+	<div class="main6_content clearfix">
+		<div class="main6_bt">
+			<img src="/Public/home/images/index_bt4.png">
+		</div>
+		<div class="more">
+			<a href="/Shiyouhui/news_list.html">更多>></a>
+		</div>
+		<div class="left">
+			<a id="prev" class="prev" href="javascript:;"><img src="/Public/home/images/index_prev2.png"></a>
+			<div id="wrapper">
+				<div id="carousel">
+					<ul>
+						<li><a href="../Shiyouhui/news_info/id/21.html" target="_blank"><img src="/Public/upload/pic/3d0baac9202de14ef2f1b43d7aa28cef.jpg"
+																							 alt="" />
+							<div class="zh_shi_jj">
+								<font>浅墨诗韵</font>
+							</div>
+						</a></li>
+						<li><a href="../Shiyouhui/news_info/id/22.html" target="_blank"><img src="/Public/upload/pic/02d5dab9b856ab14c1fe238ba5802477.jpg"
+																							 alt="" />
+							<div class="zh_shi_jj">
+								<font>诗词歌赋</font>
+							</div>
+						</a></li>
+						<li><a href="../Shiyouhui/news_info/id/23.html" target="_blank"><img src="/Public/upload/pic/d2adaf1a29d35404c23b84adece64099.jpg"
+																							 alt="" />
+							<div class="zh_shi_jj">
+								<font>山河壮丽</font>
+							</div>
+						</a></li>
+						<li><a href="../Shiyouhui/news_info/id/20.html" target="_blank"><img src="/Public/upload/pic/1eacdd5395af147008947f8dbe931852.jpg"
+																							 alt="" />
+							<div class="zh_shi_jj">
+								<font>欢迎你来</font>
+							</div>
+						</a>
+						</li>
+					</ul>
+
+					<div class="clearfix"></div>
+
+				</div>
+
+			</div>
+
+			<a id="next" class="next" href="javascript:;"><img src="/Public/home/images/index_next2.png"></a>
+
+		</div>
+
+		<div class="right">
+
+			<div class="main6_map">
+
+				<img src="/Public/home/images/index_map.png">
+
+				<a href="javascript:;" class="main_dz1">成都</a>
+
+				<a href="javascript:;" class="main_dz2">贵阳</a>
+
+				<a href="javascript:;" class="main_dz3">太原</a>
+
+				<a href="javascript:;" class="main_dz4">郑州</a>
+
+				<a href="javascript:;" class="main_dz5">北京</a>
+
+				<a href="javascript:;" class="main_dz6">哈尔滨</a>
+
+			</div>
+
+			<p>魅力诗歌</p>
+
+		</div>
+
+	</div>
+
+</div>
+
+<!--诗意生活-->
+
+<div class="main7 clearfix">
+
+	<div class="main7_bt">
+
+		<img src="/Public/home/images/index_bt5.png">
+
+	</div>
+
+	<div class="more">
+
+		<a href="/Shiyi/index.html">更多>></a>
+
+	</div>
+
+	<ul class="clearfix">
+
+		<li>
+
+			<a href="/Shiyi/info/gid/36.html"><img src="/Public/upload/pic/f303348b45ba3d29ae0a04e2c15b267c.jpg"></a>
+
+			<a href="/Shiyi/info/gid/36.html">电子诗集完整版</a>
+
+			<span>7384人查看</span>
+
+			<span>4人喜欢</span>
+
+			<font>诗词中国作者</font>
+
+		</li>
+		<li>
+
+			<a href="/Shiyi/info/gid/35.html"><img src="/Public/upload/pic/f6367187b315b8aed01444462a8029fe.jpg"></a>
+
+			<a href="/Shiyi/info/gid/35.html">电子诗集尝鲜版</a>
+
+			<span>4475人查看</span>
+
+			<span>0人喜欢</span>
+
+			<font>诗词中国作者</font>
+
+		</li>
+		<li>
+
+			<a href="/Shiyi/info/gid/34.html"><img src="/Public/upload/pic/3e10c753f64e478e5927238b14f4a63e.jpg"></a>
+
+			<a href="/Shiyi/info/gid/34.html">诗词中国主题T恤（情侣款）</a>
+
+			<span>5603人查看</span>
+
+			<span>2人喜欢</span>
+
+			<font>诗词中国</font>
+
+		</li>
+		<li>
+
+			<a href="/Shiyi/info/gid/33.html"><img src="/Public/upload/pic/50a930663bc1dc0d1a2ab0054e6c7cc0.jpg"></a>
+
+			<a href="/Shiyi/info/gid/33.html">诗词中国MOOK·第二期</a>
+
+			<span>6010人查看</span>
+
+			<span>2人喜欢</span>
+
+			<font>诗词中国</font>
+
+		</li>
+		<li>
+
+			<a href="/Shiyi/info/gid/32.html"><img src="/Public/upload/pic/26a7bc08d190c2607f592486f942f794.jpg"></a>
+
+			<a href="/Shiyi/info/gid/32.html">诗词中国MOOK·创刊号</a>
+
+			<span>4410人查看</span>
+
+			<span>1人喜欢</span>
+
+			<font>诗词中国</font>
+
+		</li>
+	</ul>
+
+</div>
+
+
+<!--底部-->
+
+<!--底部-->
+<style>
+	.cnzz img {
+		display: inherit !important;
+		padding: 0 !important;
+		width: auto !important;
+		height: auto !important;
+	}
+</style>
+<div class="footer">
+
+	<a href=""><img src="/Public/home/images/index_logo4.png"></a>
+
+	<p>主办：xxxxxxxxxxxxxx &nbsp;&nbsp;| xxxxxxxxxxxx 咨询电话：xxxxxxxxx&nbsp;&nbsp;
+		<span class="cnzz">
+				<!--<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1260596846'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1260596846%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));-->
+			<!--</script>-->
+			</span>
+	</p>
+	<div class="ma">
+		<font>扫码关注有礼</font><img src="/Public/home/images/erweima.jpg"></div>
+
+</div>
+<div style="text-align:center;margin-top:10px;">
+
+</div>
+<style>
+	.footer {
+		position: relative;
+	}
+
+	.footer .ma {
+		width: 1200px;
+		height: 145px;
+		position: absolute;
+		left: 50%;
+		margin-left: -600px;
+		top: 2px;
+	}
+
+	.footer .ma font {
+		display: block;
+		font-size: 14px;
+		color: #fff;
+		text-align: right;
+		margin-top: 5px;
+		margin-right: 8px;
+	}
+
+	.footer .ma img {
+		display: block;
+		float: right;
+		width: 100px;
+		height: 100px;
+		padding-top: 0;
+		margin-top: 10px;
+	}
+</style>
+<script type="text/javascript">
+    $(function () {
+
+        $(".news_li").mouseover(function () {
+
+            $(".news_box").show();
+
+        });
+
+        $(".news_li").mouseleave(function () {
+
+            $(".news_box").hide();
+
+        });
+
+        $(".left").luara({ width: "800", height: "400", interval: 4500, selected: "seleted", deriction: "left" });
+
+        $(".main4 li").mouseover(function () {
+
+            $(this).find(".biji").show();
+
+        });
+
+        $(".main4 li").mouseleave(function () {
+
+            $(this).find(".biji").hide();
+
+        });
+
+        $('.main5_shi_ren li').mouseover(function () {
+
+            $('.main5_shi_jj').hide();
+
+            var main5_shi_jj_i = $('.main5_shi_ren li').index($(this));
+
+            $('.main5_shi_jj').eq(main5_shi_jj_i).show();
+
+        });
+
+        $(".head_fan").click(function () {
+
+            $(".tan").show();
+
+        });
+
+        $(".close").click(function () {
+
+            $(".tan").hide();
+
+        });
+
+    });
+
+</script>
+
+<script>
+    $(function () {
+        $('.shi_nav22 li a').each(function () {
+            $(this).click(function () {
+                $('.shi_nav22 li a').removeClass('hover');
+                $(this).addClass('hover');
+                $('.shi_all2_con').hide();
+                var jing_i = $('.shi_nav22 li a').index($(this));
+                $('.shi_all2_con').eq(jing_i).show();
+            });
+        });
+        $('.shi_nav33 li a').each(function () {
+            $(this).click(function () {
+                $('.shi_nav33 li a').removeClass('hover');
+                $(this).addClass('hover');
+                $('.shi_all3_con').hide();
+                var jing_i = $('.shi_nav33 li a').index($(this));
+                $('.shi_all3_con').eq(jing_i).show();
+            });
+        });
+        $('.qh_nav li a').each(function () {
+            $(this).click(function () {
+                $('.qh_nav li a').removeClass('hover');
+                $(this).addClass('hover');
+                $('.qh_nav_con').hide();
+                var jing_i = $('.qh_nav li a').index($(this));
+                $('.qh_nav_con').eq(jing_i).show();
+                var ty = $(this).find('input').val();
+                $('#ss_type').val(ty);
+            });
+        });
+    });
+    function ht_so(tit) {
+        if (!tit) {
+            alert('请输入搜索词');
+            return false;
+        } else {
+            $('#keyword').val(tit);
+            $('#so_form').submit();
+        }
+    }
+    function setTab(name, cursel, n) {
+
+        for (i = 1; i <= n; i++) {
+
+            var menu = document.getElementById(name + i);
+
+            var con = document.getElementById("con_" + name + "_" + i);
+
+            menu.className = i == cursel ? "hover" : "";
+
+            con.style.display = i == cursel ? "block" : "none";
+
+        }
+
+    }
+
+
+
+    var slide_i = 0;//初始值
+
+    var slide_box_width = $('.slide').width();//每次移动的距离
+
+    var slide_max_i = $('.imgs').size();//全部多少个
+
+    function slide_left() {
+
+        if (slide_i < 0) {
+
+            slide_i = slide_i + 1;
+
+            $('.slide_box').animate({ 'left': slide_box_width * slide_i }, 1000);
+
+            return false;
+
+        }
+
+        $('.imgs').last().css('left', -slide_box_width * slide_max_i);
+
+        slide_i = 1;
+
+        $('.slide_box').animate({ 'left': slide_box_width * slide_i }, 1000, function () {
+
+            slide_i = -(slide_max_i - 1);
+
+            $('.slide_box').css('left', slide_box_width * slide_i);
+
+            $('.imgs').last().css('left', 'auto');
+
+        });
+
+    }
+
+    function slide_right() {
+        if (slide_i > -(slide_max_i - 1)) {
+            slide_i = slide_i - 1;
+            $('.slide_box').animate({ 'left': slide_box_width * slide_i }, 1000);
+            return false;
+        }
+        $('.imgs').first().css('left', slide_box_width * slide_max_i);
+        slide_i = slide_i - 1;
+        $('.slide_box').animate({ 'left': slide_box_width * slide_i }, 1000, function () {
+            slide_i = 0;
+            $('.slide_box').css('left', '0');
+            $('.imgs').first().css('left', 'auto');
+        });
+    }
+    $(function () {
+        $('.slide_box').width(slide_box_width * slide_max_i);
+        setInterval(slide_right, 4000);
+    });
+
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('#carousel ul').carouFredSel({
+            prev: '#prev',
+            next: '#next',
+            scroll: 1000
+        });
+    });
+</script>
+
+
+
+</body>
+
+</html>

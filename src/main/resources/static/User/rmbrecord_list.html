@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>文档管理 - 会员中心 -短文学网</title>
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/duan.css" rel="stylesheet" type="text/css" />
+    <link href="css/member.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="myjs/iframe.js"></script>
+    <script type="text/javascript" src="js/msgbox.js"></script>
+</head>
+
+<body>
+<!--头部开始-->
+<div id="tool">
+    <div class="tool_content">
+        <h2><a href="../index.html">
+            <!--<img src="https://static.duanwenxue.com/member/common/images/logo.png" align="absmiddle" alt="水墨世界" />-->
+            水墨世界首页
+        </a>
+        </h2>
+
+        <dl>
+            <dt>
+                <a href="user.html" class="member_base specnotice" > <img id="userImg1"  src="" /> <span id="userName1"></span> <i></i></a>
+
+                <ul>
+                    <li><a href="message.html">短消息</a></li>
+                    <li><a href="index.html">管理中心</a></li>
+                    <li><a href="user.html">我的主页</a></li>
+                    <li><a href="../logout">退　　出</a></li>
+                </ul>
+            </dt>
+        </dl>
+    </div>
+</div>
+<div class="tool_clear"></div>
+<script type="text/javascript">
+    $(function(){
+        //个人资料下拉
+        $(".tool_content dt").hover(
+            function(){
+                $(this).children("ul").show();
+            },
+            function(){
+                $(this).children("ul").hide();
+            }
+        );
+    });
+</script>
+<!--头部结束-->
+
+
+<!-- user_center_main 开始 -->
+<div class="user_center_main" id="offset_top">
+    <div class="main_container fl">
+        <div class="fl left relative">
+            <div>
+                <a href="javascript:qiandao();" id="sign_show_index" class="sign_show sign_show_index_has">签到</em></a>            </div>
+            <div class="hd">
+                <div class="info_lcol">
+                    <div class="u_pic">
+                        <img id="userImg2" src="" width="55" height="55" alt="" />
+                    </div>
+                    <div class="info_m">
+                        <div class="u_name" id="userName2"></div>
+                        <div class="lv" style="cursor:pointer;"><span id="lv_num"></span><span id="lv_span"></span></div>
+                    </div>
+                </div>
+                <div class="acco_info">
+                    <ul>
+                        <li>关注人气：<em id="renqi">0</em></li>
+                        <li id="yue">账户余额：0</li>
+                        <li id="jifen">我的积分：<span class="tips_line"><a href="javascript:;" class="problem"></a><span class="tips i"><img src="https://static.duanwenxue.com/jifen.jpg"></span></span></li>
+                        <!--<li>可提现积分：4,310<span class="tips_line"><a href="javascript:;" class="problem"></a><span class="tips">积分提现只限于2017年10月之后的</span></span></li>-->
+                    </ul>
+                </div>
+                <div class="btn_write">
+                    <a href="article_add1.html" class="write_article" iframe="0"></a>
+                    <!--<a href="/member/diary_add.php" class="write_diary"></a>-->
+                </div>
+                <div class="btn_write"><a href="booksheif_list.html" style=" font-weight:bolder; border-radius:5px; background:#8DC61E; color:#FFF; width:100%; line-height:30px; text-align:center;">我的藏书架</a></div>
+
+
+                <!--<div class="btn_write"><a href="/member/story_add_book.php" style=" font-weight:bolder; border-radius:5px; background:#8DC61E; color:#FFF; width:100%; line-height:30px; text-align:center;">我要写小说</a></div>-->
+            </div>
+            <div class="bd">
+                <ul>
+                    <!--<li><a href="story_book.php">我的小说</a></li>-->
+                    <li><a href="content_list.html">我的文章</a></li>
+                    <!--<li><a href="content_list.php?channelid=17">我的日记</a></li>-->
+                    <!--<li><a href="rmbrecord_list.html">我的资产</a></li>-->
+                    <li><a href="message.html">短  消  息</a></li>
+                    <li><a href="comment.html">评论管理</a></li>
+                    <li><a href="feedback.html">留言管理</a></li>
+                    <li><a href="space.html">空间设置</a></li>
+                    <li><a href="profile.html">个人设置</a></li>
+                    <li><a href="user.html">我的主页</a></li>
+                </ul>
+            </div>
+
+               </div>
+        <div class="fr right relative">
+            <div id="show_yezi" class="yezi_happy"></div>
+            <div class="list_box qbao">
+                <h1 class="head">我的资产</h1>
+                <div class="upper">
+                    <div class="m">
+                        <h5>账户余额<span><i id="money_text">2元</i></span></h5>
+                        <input type="hidden" id="money" value="2" />
+                        <div class="btns">
+                            <a href="#" id="czBtn" class="btn btn1">充值</a>
+                            <a id="txBtn" href="#" class="btn btn2">提现</a>*当前余额不足</div>
+                    </div>
+                    <div class="sidebar">
+                        <p>每次提现最小额度为￥100.00</p>
+                        <p>每次提现收取 5% 手续费</p>
+                        <p>提现会在 3-5 个工作日内到账</p>
+                        <p class="c" id="tBtn1">提现遇到问题?</p>
+                        <p class="c" id="tBtn2">提现手续费是怎么收取的?</p>
+                    </div>
+                </div>
+                <h1 class="head">交易明细</h1>
+                <div class="clear"></div>
+                <form action="" method="post">
+                    <table cellpadding="0" cellspacing="0" width="100%" class="list_table">
+                        <thead>
+                        <tr>
+                            <th width="50">时间</th>
+                            <th width="40">类型</th>
+                            <th width="200">详情</th>
+                            <th width="50">金额</th>
+                            <th width="50">状态</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>2017-11-12</td>
+                            <td>赞赏</td>
+                            <td>被<span class="corange">游客</span> 赞赏文章 <span class="corange">《半世引相思，一曲叹红痕》</span></td>
+                            <td>
+                                <span class="cred">+￥2</span>
+                            </td>
+                            <td>已到账</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="20" align="right">
+                                <div class="gopage">
+                                    <input id="go-page" type="text" value="1">
+                                    <button type="button" id="btn-go-page">GO</button>
+                                </div>
+                                共1条记录,当前1/1页&nbsp;&nbsp;
+                                <a href="rmbrecord_list.html?p=1">首页</a>
+                                <a href="rmbrecord_list.html?p=1">上一页</a>
+                                <a href="rmbrecord_list.html?p=1">下一页</a>
+                                <a href="rmbrecord_list.html?p=1">尾页</a>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="popwrap hidden" id="chongzhi">
+        <div class="inner box1">
+            <span class="close"></span>
+            <h1>充值</h1>
+            <div class="form_wrap">
+                <div class="tinputs">
+							<span class="t_item">
+            				<label>充值金额</label><input id="recharge_money" type="text" placeholder="0.00" class="text">
+            				</span>
+                </div>
+                <div class="pay_way" id="rPayWay">
+                    <div class="t">选择支付方式：</div>
+                    <div class="pays">
+                        <input type="hidden" id="payWay" value="1">
+                        <label data-v="1"><i class="iradio on"></i><i class="weichat"></i>微信支付</label>
+                        <label data-v="2"><i class="iradio"></i><i class="alipay"></i>支付宝支付</label>
+                    </div>
+                </div>
+                <a href="#" id="submitPay_btn" class="subbtn">确认支付</a>
+            </div>
+        </div>
+    </div>
+    <div class="shang">
+        <div class="shangpop hidden" id="weiPay">
+            <div class="popinner weipay">
+                <span class="close"></span>
+                <h1>充值金额：<span id="recharge_txt"><em>20</em>元</span></h1>
+                <div class="qrcode"><img id="pay_code" width="166px" /></div>
+                <p id="payway_icon"><i class="weichat"></i>微信支付</p>
+                <p id="payway_text">使用微信扫描二维码完成支付</p>
+            </div>
+        </div>
+    </div>
+    <div class="popwrap hidden" id="tip1">
+        <div class="inner box2">
+            <span class="close"></span>
+            <h1>提现周期是多久？</h1>
+            <div class="c">
+                <p>提现周期为 3 个工作日，钱将通过支付宝转账至你的账号，请在支付宝账单里面查看，<br>转账方为：XXXXX</p>
+                <p>若在 3 个工作日后仍未到账，可以通过下列渠道进行咨询：</p>
+                <p>微信公众号：暂无</p>
+            </div>
+        </div>
+    </div>
+    <div class="popwrap hidden" id="tip2">
+        <div class="inner box3">
+            <span class="close"></span>
+            <h1>5% 的提现手续费是怎么收取的?</h1>
+            <div class="c">
+                <p>每次提现会收取 5% 手续费，比如您提现 100 元，扣除 5% 手续费后，您的支付宝实际到账金额为 95 元。</p>
+            </div>
+        </div>
+    </div>
+    <div class="popwrap hidden" id="tixian">
+        <div class="inner box4">
+            <span class="close"></span>
+            <h1>提现</h1>
+            <div class="form_wrap w1">
+                <div class="tinputs">
+							<span class="t_item">
+            				<label>提现金额：</label><input id="tixian_money" type="text" placeholder="0.00" class="text" onkeyup="value=value.replace(/[^\d\.]/g,'')" />
+            				</span>
+                    <span class="t_item">
+            				<label>支付宝账号：</label><input id="tixian_account" type="text" placeholder="填入收款支付宝账号邮箱或手机号" class="text f14">
+            				</span>
+                    <span class="t_item">
+            				<label>收款人真实姓名：</label><input id="tixian_name" type="text" placeholder="支付宝账号对应的真实姓名，如果错误无法提现" class="text f14">
+            				</span>
+                </div>
+                <div class="tips">
+                    <p>*暂时仅支持提现至支付宝账户。</p>
+                    <p class="c1">*提现申请提交后3个工作日内到账。</p>
+                    <p>*提现申请提交后暂时无法撤销。</p>
+                    <p>*每次提现收取5%手续费。</p>
+                </div>
+                <a id="tixian_btn" href="#" class="subbtn">确认提现</a>
+            </div>
+        </div>
+    </div>
+    <div class="shang">
+        <div class="shangpop hidden" id="shangTips">
+            <div class="popinner tips">
+                <p id="shangTipsText">文字文字</p>
+            </div>
+        </div>
+    </div>
+    <!-- 悬浮开始 -->
+    <!--<div class="suspension fr">-->
+    <!--<div class="sys">-->
+    <!--<div class="weixin">-->
+    <!--<img src="/templets/member/common/images/img_erweima.jpg" width="109" height="108" />-->
+    <!--<p class="yellow">扫一扫关注短文学</p>-->
+    <!--</div>-->
+    <!--<div class="contact">-->
+    <!--<div class="tel"><i></i>0793-8179555</div>-->
+    <!--<div class="mail_to"><i></i><a href="mailto:82578687@qq.com" title="82578687@qq.com">82578687@qq.com</a></div>-->
+    <!--</div>-->
+    <!--<div class="close" id="close"><a href="javascript:;">收起</a></div>-->
+    <!--</div>-->
+
+    <!--</div>-->
+    <!-- 悬浮结束 -->
+    <div class="clear"></div>        </div>
+<script src="/member/ajax_award.php?dopost=init&nolist=true" type="text/javascript"></script>
+<script type="text/javascript">
+    function hideTips() {
+        $('#shangTips').addClass('hidden');
+    }
+    function showTips(info){
+        var top = ($(window).height() - $('#shangTips').find('.popinner').height()) / 3;
+        var left = ($(window).width() - $('#shangTips').find('.popinner').width() - 360) / 2;
+        $('#shangTips').find('.popinner').css({
+            'margin-top': top,
+            'margin-left': left
+        });
+        $('#shangTipsText').text(info);
+        $('#shangTips').removeClass('hidden');
+        setTimeout('hideTips()', 2000);
+    }
+    function checkTixian(){
+        var reNum = /^[0-9]+.?[0-9]*$/; //判断字符串是否为数字 //判断正整数 /^[1-9]+[0-9]*]*$/
+        var reMobile = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+        var reEmail = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+        var reName = new RegExp("[\\u4E00-\\u9FFF]+","g");
+        if (!reNum.test($("#tixian_money").val())) {
+            showTips('请输入正确且大于100的金额！');
+            return false;
+        }else{
+            if($("#tixian_money").val() < 100){
+                showTips('请输入正确且大于100的金额！');
+                return false;
+            }
+        }
+        if(parseFloat($("#tixian_money").val()) > parseFloat($("#money").val())){
+            showTips('您输入的金额超过了您的余额！');
+            return false;
+        }
+        if(!reMobile.test($("#tixian_account").val()) && !reEmail.test($("#tixian_account").val()))
+        {
+            showTips('请输入正确的支付宝账号！');
+            return false;
+        }
+        if(!reName.test($("#tixian_name").val())){
+            showTips('请输入正确的姓名！');
+            return false;
+        }
+        return true;
+    }
+    $('#tixian_btn').click(function() {
+        if(checkTixian()){
+            var tixian_money = $("#tixian_money").val();
+            var tixian_account = $("#tixian_account").val();
+            var tixian_name = $("#tixian_name").val();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: "/member/ajax_award.php",
+                data: {
+                    dopost: 'tixian',
+                    name: tixian_name,
+                    money: tixian_money,
+                    account: tixian_account
+                },
+                success: function(data) {
+                    if(data.status == 0) {
+                        //提现失败
+                        showTips(data.info);
+                        return false;
+                    }else{
+                        //提现成功
+                        $('#tixian').addClass('hidden');
+                        showTips(data.info);
+                        window.location.reload();
+                    }
+                },
+                error: function() {
+                    showTips('当前人数太多，请稍后重试');
+                    return false;
+                }
+            });
+        }
+    });
+    function checkRecharge(){
+        var reNum = /^[0-9]+.?[0-9]*$/; //判断字符串是否为数字 //判断正整数 /^[1-9]+[0-9]*]*$/
+        var recharge_money = $("#recharge_money").val();
+        if (!reNum.test(recharge_money)) {
+            showTips('请输入正确且大于0的金额！');
+            return false;
+        }
+        return true;
+    }
+    $('#submitPay_btn').click(function() {
+        if(checkRecharge()){
+            var recharge_money = $("#recharge_money").val();
+            var payWay = $("#payWay").val();
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: "/member/trade.php",
+                data: {
+                    payway: payWay,
+                    money: recharge_money,
+                },
+                success: function(data) {
+                    if(data.status == 0) {
+                        //提现失败
+                        showTips(data.info);
+                        return false;
+                    }else{
+                        $('#pay_code').attr('src',data.info);
+                        var top = ($(window).height() - $('#weiPay').find('.popinner').height()) / 2;
+                        $('#weiPay').removeClass('hidden').find('.popinner').css({
+                            'margin-top': top
+                        });
+                        $('#recharge_txt').html('<em>'+recharge_money+'</em>元');
+                        if(payWay == 1){
+                            $('#payway_icon').html('<i class="weichat"></i>微信支付');
+                            $('#payway_text').html('使用微信扫描二维码完成支付');
+                        }else{
+                            $('#payway_icon').html('<i class="alipay"></i>支付宝支付');
+                            $('#payway_text').html('使用支付宝扫描二维码完成支付');
+                        }
+                        $('#chongzhi').addClass('hidden');
+                        $('#weiPay').removeClass('hidden');
+                        //每隔2秒执行一次查询订单支付状态
+                        var loop = 0;
+                        var check_pay = window.setInterval(function(){
+                            //如果检查了2分钟没有支付则停止循环并关闭支付二维码
+                            if(loop > 60){
+                                window.clearInterval(check_pay);
+                                $('.popinner .close').parents('#weiPay').addClass('hidden');
+                                $('#pay_code').attr('src','');
+                                $('#recharge_txt').html('');
+                            }else{
+                                $.get("pay_check.php?orderid="+data.orderid, function(result){
+                                    if(result == 1){
+                                        showTips('充值成功!');
+                                        window.location.reload();
+                                    }
+                                });
+                            }
+                            loop++;
+                        }, 2000);
+                    }
+                },
+                error: function() {
+                    showTips('当前人数太多，请稍后重试');
+                    return false;
+                }
+            });
+        }
+    });
+
+    function checkPaystatus(orderid){
+        $.get("pay_check.php?orderid="+orderid, function(result){
+            return result;
+        });
+    }
+
+    $('#rPayWay').find('label').click(function() {
+        $('#rPayWay').find('.iradio').removeClass('on');
+        $(this).find('.iradio').addClass('on');
+        $('#payWay').val($(this).data('v'));
+    });
+    $('.popwrap .close').click(function() {
+        $(this).parents('.popwrap').addClass('hidden');
+        $('#pay_code').attr('src','');
+        $('#recharge_txt').html('');
+    });
+    $('.popinner .close').click(function() {
+        $(this).parents('#weiPay').addClass('hidden');
+        $('#pay_code').attr('src','');
+        $('#recharge_txt').html('');
+    });
+    $('#czBtn').click(function() {
+        var top = ($(window).height() - $('#chongzhi').find('.inner').height()) / 2;
+        $('#chongzhi').removeClass('hidden').find('.inner').css({
+            'margin-top': top
+        });
+    });
+    $('#txBtn').click(function() {
+        var top = ($(window).height() - $('#tixian').find('.inner').height()) / 2;
+        $('#tixian').removeClass('hidden').find('.inner').css({
+            'margin-top': top
+        });
+    });
+    $('#tBtn1').click(function() {
+        var top = ($(window).height() - $('#tip1').find('.inner').height()) / 2;
+        $('#tip1').removeClass('hidden').find('.inner').css({
+            'margin-top': top
+        });
+    });
+    $('#tBtn2').click(function() {
+        var top = ($(window).height() - $('#tip2').find('.inner').height()) / 2;
+        $('#tip2').removeClass('hidden').find('.inner').css({
+            'margin-top': top
+        });
+    });
+</script>
+<!--底部开始-->
+<!--<div id="footer">-->
+<!--<div class="footer_content"> <a href="#" class="footer_go_top"></a> </div>-->
+<!--</div>-->
+<!--底部结束-->
+<!--<div class="hidden"><script src="https://static.duanwenxue.com/js/tj.js"></script></div>-->
+<!--<div class="hidden"><script src="https://static.duanwenxue.com/js/baidu_js_push.js"></script></div>    -->
+</body>
+</html>

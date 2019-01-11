@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>魅力诗歌——水墨世界</title>
+
+    <meta name="description" content="">
+
+    <meta name="keywords" content="">
+
+    <link href="/Public/home/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/Public/home/js/jquery.js"></script>
+    <script src="/Public/home/js/jquery.luara.0.0.1.min.js"></script>
+    <script src="/Public/home/js/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+    <script src="/Public/home/js/jquery.slideBox.min.js" type="text/javascript"></script>
+    <script src="/Public/home/js/slider.js"></script>
+    <link rel="stylesheet" href="/Public/common/sweetalert-master/dist/sweetalert.css">
+    <script src="/Public/common/sweetalert-master/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="/Public/home/js/language.js"></script>
+    <script type="text/javascript" src="myjs/shici.js"></script>
+</head>
+
+<body>
+
+<!--顶部-->
+
+<div class="head">
+
+    <div class="head_content">
+
+        <div class="head_nav">
+
+            <ul>
+                <li><a href="/Public/login.html">登录</a></li>
+
+                <li><a href="/Public/register.html">注册</a></li>
+
+                <style>
+                    .zh_click {
+                        color: #757575 !important;
+                    }
+                </style>
+
+
+                <li><a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体中文</a></li>
+
+                <li class="head_fan"><a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體中文</a></li>
+
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="logo clearfix">
+
+    <div class="logo1">
+
+        <a href="/index.html"><img src="/Public/home/images/index_logo1.png"></a>
+
+    </div>
+
+    <div class="logo2">
+
+        <img src="/Public/home/images/index_logo2.png">
+
+    </div>
+
+    <form action="/News/search_list.html" class="search">
+        <input type="text" name="keyword" value="" class="search_input" placeholder="请输入关键字">
+        <input type="submit" class="search_btn" value="搜索">
+    </form>
+
+</div>
+<div class="tan">
+    <div class="tan1 clearfix">
+        <span>温馨提示</span>
+        <a href="javascript:;" class="close">X</a>
+    </div>
+    <div class="tan2">
+        <p>繁体版文字由系统自动切换生成，部分浏览器不兼容，如有错误，请您理解。</p>
+    </div>
+</div>
+
+
+<style>
+    .shi_all2_con,
+    .shi_all3_con {
+        overflow: hidden;
+    }
+</style>
+<div class="nav">
+    <ul class="clearfix">
+        <li><a href="/index.html" class="hover">首页</a></li>
+        <li class="news_li"><a href="/Shige/shi.html">诗词欣赏</a>
+            <div class="news_box">
+                <a href="/Shige/xiandai/xiandai.html">现代诗歌</a>
+                <a href="/Shige/gufeng/gufeng.html">古风词韵</a>
+                <a href="/Shige/jingdian/jingdian.html">经典诗词</a>
+                <a href="/Shige/yingyu/yingyu.html">英语诗歌</a>
+            </div>
+        </li>
+        <li><a href="">专题展示</a></li>
+        <li><a target="_blank" href="http://bbs.zhsc.net/">诗词论坛</a></li>
+        <li><a target="_blank" href="/chat.ftl">诗友会</a></li>
+        <li><a href="/Shiyi/index.html">诗意生活</a></li>
+        <li><a target="_blank" href="/User/index.html">个人中心</a></li>
+        <li><a target="_blank" href="/Houtai/index.html">后台管理</a></li>
+    </ul>
+</div>
+<!--<script type="text/javascript" src="/Public/home/js/main.js"></script>-->
+
+
+<div class="news_neirong">
+
+    <div class="news_banner">
+
+        <a href="javascript:;" ><img src="/Public/upload/pic/5129e7f0c45839e2d2fb9d83d14cd0f9.png" title="yuandi"></a>
+
+    </div>
+
+    <div class="yuan_content1 clearfix">
+
+        <div class="yuan_bt clearfix">
+
+            <img src="/Public/home/images/yuan_zixun.png">
+
+            <a href="/Yuandi/news_list.html">更多>></a>
+
+        </div>
+        <style>
+            .example22{width:451px!important;height:296px!important;float:left;}
+            .example22 ol{position:relative;width: 80px;height: 20px;bottom:35px;left:90%;}
+            .example22 ol li{float:left;width: 13px;height:13px;margin: 5px;border-radius:13px;background: #fff;cursor:pointer;}
+            .example22 ol li.seleted{background: #a50413;}
+            .luara-left ul{padding: inherit;margin: 0;height:296px!important;}
+            .luara-left ul li{float: left;padding: inherit;margin: inherit;list-style: none;position:relative;height:296px!important;}
+            .luara-left ul li img{width: inherit;height: inherit;}
+        </style>
+
+
+        <div class="yuan1_left">
+            <!--<img src="/Public/upload/pic/77b53af386e8ccdf6f733d43df5da08c.jpg">-->
+            <div class="example22">
+                <ul>
+                    <li><img src="/Public/upload/pic/7be11509793bc3dc9c5fdf2fe0687c85.jpg" alt="“新诗百年” 如火如荼"/><div class="jj"><span>“新诗百年” 如火如荼</span></div></li><li><img src="/Public/upload/pic/1145e6a34c55d734e10fd9c55c8a3497.jpg" alt="新诗扇动孩子想象的翅膀"/><div class="jj"><span>新诗扇动孩子想象的翅膀</span></div></li><li><img src="/Public/upload/pic/24c74e88f56b569e35473beabc41c717.jpg" alt="余光中：《乡愁》不朽 乡思不绝"/><div class="jj"><span>余光中：《乡愁》不朽 乡思不绝</span></div></li>				</ul>
+                <ol>
+                    <li></li><li></li><li></li>				</ol>
+            </div>
+            <!--调用Luara示例-->
+            <script>
+                $(function(){
+
+                    $(".example22").luara({width:"451",height:"296",interval:5500,selected:"seleted",deriction:"left"});
+                });
+            </script>
+        </div>
+
+        <div class="yuan1_right">
+
+            <ul>
+
+                <li class="clearfix">
+
+                    <div class="date">
+
+                        <span>12-27</span>
+
+                        <font>2017</font>
+
+                    </div>
+
+                    <div class="yuan1_jj">
+
+                        <a target="_blank" href="/Yuandi/news_info/id/85.html">“新诗百年” 如火如荼</a>
+
+                        <p>1917年，胡适在《新青年》杂志上发表《两只蝴蝶》（原题《朋友》），被视为是中国第一首白话诗，由此也拉开了中国新诗的序幕。</p>
+
+                    </div>
+
+                </li><li class="clearfix">
+
+                <div class="date">
+
+                    <span>12-27</span>
+
+                    <font>2017</font>
+
+                </div>
+
+                <div class="yuan1_jj">
+
+                    <a target="_blank" href="/Yuandi/news_info/id/84.html">新诗扇动孩子想象的翅膀</a>
+
+                    <p>100年前，胡适在《新青年》放飞“两只蝴蝶”，穿行在黄河与长江流域之间，扇动几下翅膀，一张“新诗”的面孔出现。</p>
+
+                </div>
+
+            </li><li class="clearfix">
+
+                <div class="date">
+
+                    <span>12-20</span>
+
+                    <font>2017</font>
+
+                </div>
+
+                <div class="yuan1_jj">
+
+                    <a target="_blank" href="/Yuandi/news_info/id/83.html">余光中：《乡愁》不朽 乡思不绝</a>
+
+                    <p>“小时候，乡愁是一枚小小的邮票，我在这头，母亲在那头；长大后，乡愁是一张窄窄的船票，我在这头，新娘在那头……”</p>
+
+                </div>
+
+            </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+<!--现代诗歌-->
+    <div class="yuan2">
+        <div class="yuan_content2">
+            <div class="yuan_bt clearfix">
+                <img src="/Public/home/images/yuan_bt21.png">
+                <a href="/Shige/xiandai/xiandai.html">更多>></a>
+            </div>
+            <div class="yuan2_ul">
+                <ul class="clearfix" id="xiandai">
+                    <!--<a target="_blank" href="/Yuandi/view/id/112.html">-->
+                        <!--<li>-->
+                            <!--<span>乡愁</span>-->
+                            <!--<font>作者：余光中</font>-->
+                            <!--<p style="text-align: center;">小时候</p><p style="text-align: center;">乡愁是一枚小小的邮票&nbsp;</p><p style="text-align: center;">我在这头&nbsp;</p><p style="text-align: center;">母亲在那头&nbsp;</p><p><br/></p><p style="text-align: center;">长大后&nbsp;</p><p style="text-align: center;">乡愁是一张窄窄的船票&nbsp;</p><p style="text-align: center;">我在这头&nbsp;</p><p style="text-align: center;">新娘在那头&nbsp;</p><p><br/></p><p style="text-align: center;">后来啊&nbsp;</p><p style="text-align: center;">乡愁是一方矮矮的坟墓&nbsp;</p><p style="text-align: center;">我在外头&nbsp;</p><p style="text-align: center;">母亲在里头&nbsp;</p><p><br/></p><p style="text-align: center;">而现在&nbsp;</p><p style="text-align: center;">乡愁是一湾浅浅的海峡&nbsp;</p><p style="text-align: center;">我在这头&nbsp;</p><p style="text-align: center;">大陆在那头&nbsp;</p><p style="text-align: right;">　　　　　　　1972.7.21</p>-->
+                        <!--</li>-->
+                    <!--</a>-->
+                    <!--<a target="_blank" href="/Yuandi/view/id/111.html">-->
+                    <!--<li>-->
+                        <!--<span>葬我</span>-->
+                        <!--<font>作者：朱湘</font>-->
+                        <!--<p style="text-align: center;">葬我在荷花池内，<br/></p><p style="text-align: center;">耳边有水蚓拖声，<br/>在绿荷叶的灯上<br/>萤火虫时暗时明——<br/><br/>葬我在马缨花下，<br/>永做芬芳的梦——<br/>葬我在泰山之巅，<br/>风声呜咽过孤松——<br/><br/>不然，就烧我成灰，<br/>投入泛滥的春江，<br/>与落花一同漂去<br/>无人知道的地方。</p><p><br/></p>						</li>-->
+                    <!--</a>-->
+                    <!--<a target="_blank" href="/Yuandi/view/id/110.html">-->
+                    <!--<li>-->
+                        <!--<span>黄昏的歌</span>-->
+                        <!--<font>作者：曾卓</font>-->
+                        <!--<p style="text-align: center; text-indent: 0em;">时光短暂地徘徊<br/>接着小鸟张开翅膀<br/>平稳地向地平线翱翔。<br/>那渐渐变淡的绯红的朦胧正要隐去，<br/>突然那颗星闪闪发光，<br/>“逝去了吗，时光？”<br/>夜自己的音乐<br/>弥漫在天空。</p>						</li>-->
+                    <!--</a>-->
+                    <!--<a target="_blank" href="/Yuandi/view/id/109.html">-->
+                    <!--<li>-->
+                        <!--<span>断弦的琴</span>-->
+                        <!--<font>作者：曾卓</font>-->
+                        <!--<p style="text-align: center; text-indent: 0em;">将我的断弦的琴送你<br/>从此不愿再弹奏着它<br/>在你明月照着的绿窗前唱一支小夜曲<br/>因为我不愿<br/>让时代的洪流滔滔远去却将我的生命的小船<br/>系在你的柔手上<br/>搁浅于爱情的沙滩<br/>我知道要来的<br/>是怎样难忍的痛苦<br/>但我仍以手<br/>扼窒爱情的呼吸</p>						</li>-->
+                    <!--</a>				-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<!--古风词韵-->
+    <div class="yuan2">
+        <div class="yuan_content2">
+            <div class="yuan_bt clearfix">
+                <img src="/Public/home/images/yuan_bt22.png">
+                <a href="/Shige/gufeng/gufeng.html">更多>></a>
+            </div>
+            <div class="yuan2_ul">
+                <ul class="clearfix" id="gufeng">
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--经典诗词-->
+    <div class="yuan2">
+        <div class="yuan_content2">
+            <div class="yuan_bt clearfix">
+                <img src="/Public/home/images/yuan_bt23.png">
+                <a href="/Shige/jingdian/jingdian.html">更多>></a>
+            </div>
+            <div class="yuan2_ul">
+                <ul class="clearfix" id="jingdian">
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--英语诗歌-->
+    <div class="yuan2">
+        <div class="yuan_content2">
+            <div class="yuan_bt clearfix">
+                <img src="/Public/home/images/yuan_bt24.png">
+                <a href="/Shige/yingyu/yingyu.html">更多>></a>
+            </div>
+            <div class="yuan2_ul" id="yingyu">
+                <ul class="clearfix">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="yuan_content3">-->
+        <!--<div class="yuan_bt clearfix">-->
+            <!--<img src="/Public/home/images/yuan_bt3.png">-->
+            <!--<a href="/Yuandi/shiren_list.html">更多>></a>-->
+        <!--</div>-->
+        <!--<div id="content">-->
+            <!--<div id="content_inner">-->
+                <!--<ul id="slides1">-->
+                    <!--<li>-->
+                        <!--<div class="content">-->
+                            <!--<img src="/Public/upload/pic/215752294207c963ef4da037d11a7b83.jpg" />-->
+                            <!--<span>西川</span>-->
+                            <!--<p>原名刘军，出生于江苏徐州，知识分子写作诗群代表诗人...</p>-->
+                            <!--<a target="_blank" href="/Yuandi/sr_view/id/9.html">了解详情</a>-->
+                        <!--</div>-->
+                    <!--</li><li>-->
+                    <!--<div class="content">-->
+                        <!--<img src="/Public/upload/pic/2ca85f1fb340d34f9b3bcb99ec1d4a03.jpg" />-->
+                        <!--<span>戴望舒</span>-->
+                        <!--<p>中国现代派象征主义诗人，翻译家。</p>-->
+                        <!--<a target="_blank" href="/Yuandi/sr_view/id/17.html">了解详情</a>-->
+                    <!--</div>-->
+                <!--</li><li>-->
+                    <!--<div class="content">-->
+                        <!--<img src="/Public/upload/pic/2a433a60374278fca976159b24afc1eb.jpg" />-->
+                        <!--<span>余秀华</span>-->
+                        <!--<p>1976年生于湖北省钟祥市石牌镇横店村，诗人。</p>-->
+                        <!--<a target="_blank" href="/Yuandi/sr_view/id/6.html">了解详情</a>-->
+                    <!--</div>-->
+                <!--</li><li>-->
+                    <!--<div class="content">-->
+                        <!--<img src="/Public/upload/pic/688c731f96c15178ee5dd12754b5cdbe.jpg" />-->
+                        <!--<span>芒克</span>-->
+                        <!--<p>原名姜世伟，朦胧诗人的代表之一，著有诗集《阳光中的...</p>-->
+                        <!--<a target="_blank" href="/Yuandi/sr_view/id/10.html">了解详情</a>-->
+                    <!--</div>-->
+                <!--</li><li>-->
+                    <!--<div class="content">-->
+                        <!--<img src="/Public/upload/pic/66370c5db861fd993016304ada9a6680.jpg" />-->
+                        <!--<span>汪国真</span>-->
+                        <!--<p>（1956-2015），生于北京，当代诗人、书画家...</p>-->
+                        <!--<a target="_blank" href="/Yuandi/sr_view/id/11.html">了解详情</a>-->
+                    <!--</div>-->
+                <!--</li><li>-->
+                    <!--<div class="content">-->
+                        <!--<img src="/Public/upload/pic/667ba1e571985d5fd18b92102399ab64.jpg" />-->
+                        <!--<span>席慕蓉</span>-->
+                        <!--<p>全名穆伦·席连勃，当代画家、诗人、散文家。</p>-->
+                        <!--<a target="_blank" href="/Yuandi/sr_view/id/8.html">了解详情</a>-->
+                    <!--</div>-->
+                <!--</li><li>-->
+                    <!--<div class="content">-->
+                        <!--<img src="/Public/upload/pic/14f0b970ca5b998fcd36bde549d19438.jpg" />-->
+                        <!--<span>陈先发</span>-->
+                        <!--<p>安徽桐城人，著有诗集《春天的死亡之书》《前世》。</p>-->
+                        <!--<a target="_blank" href="/Yuandi/sr_view/id/7.html">了解详情</a>-->
+                    <!--</div>-->
+                <!--</li><li>-->
+                    <!--<div class="content">-->
+                        <!--<img src="/Public/upload/pic/34ab399bfa76fa664187ff74ac7f94b6.jpg" />-->
+                        <!--<span>舒婷</span>-->
+                        <!--<p>中国当代女诗人，朦胧诗派的代表人物。</p>-->
+                        <!--<a target="_blank" href="/Yuandi/sr_view/id/12.html">了解详情</a>-->
+                    <!--</div>-->
+                <!--</li><li>-->
+                    <!--<div class="content">-->
+                        <!--<img src="/Public/upload/pic/aad9cf9a79967ac7815a537d11a3a957.jpg" />-->
+                        <!--<span>杨克</span>-->
+                        <!--<p>1957年生，广西人，中国“第三代实力派诗人”。</p>-->
+                        <!--<a target="_blank" href="/Yuandi/sr_view/id/14.html">了解详情</a>-->
+                    <!--</div>-->
+                <!--</li><li>-->
+                    <!--<div class="content">-->
+                        <!--<img src="/Public/upload/pic/d17f846e34fb0d0e7b60883a36d820b8.jpg" />-->
+                        <!--<span>海子</span>-->
+                        <!--<p>原名查海生，当代青年诗人。</p>-->
+                        <!--<a target="_blank" href="/Yuandi/sr_view/id/16.html">了解详情</a>-->
+                    <!--</div>-->
+                <!--</li><li>-->
+                    <!--<div class="content">-->
+                        <!--<img src="/Public/upload/pic/67c42c40f005c0225313004b9406591a.jpg" />-->
+                        <!--<span>徐志摩</span>-->
+                        <!--<p>浙江海宁硖石人，现代诗人、散文家。</p>-->
+                        <!--<a target="_blank" href="/Yuandi/sr_view/id/15.html">了解详情</a>-->
+                    <!--</div>-->
+                <!--</li><li>-->
+                    <!--<div class="content">-->
+                        <!--<img src="/Public/upload/pic/6e201c0f715bc5cdf3fbdbf2a479d774.jpg" />-->
+                        <!--<span>陈昂</span>-->
+                        <!--<p>青年诗人，春草派诗歌代表人物。</p>-->
+                        <!--<a target="_blank" href="/Yuandi/sr_view/id/13.html">了解详情</a>-->
+                    <!--</div>-->
+                <!--</li>				</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+    <!--     诗词中国学院               -->
+    <div class="yuan_content3">
+        <div class="you_bt clearfix">
+            <img src="/Public/home/images/jijiechuban_03.png">
+            <a href="http://www.educhinstyle.cn/" target="_blank">更多>></a>
+        </div>
+        <div class="you_content4">
+            <a href="http://www.educhinstyle.cn/" target="_blank"><img src="/Public/upload/pic/2a5d346de8da78553811053d7555292f.png"></a>
+        </div>
+    </div>
+
+</div>
+<!--底部-->
+<style>
+    .cnzz img {
+        display: inherit !important;
+        padding: 0 !important;
+        width: auto !important;
+        height: auto !important;
+    }
+</style>
+<div class="footer">
+
+    <a href=""><img src="/Public/home/images/index_logo4.png"></a>
+
+    <p>主办：xxxxxxxxxxxxxx &nbsp;&nbsp;| xxxxxxxxxxxx 咨询电话：xxxxxxxxx&nbsp;&nbsp;
+        <span class="cnzz">
+				<!--<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1260596846'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1260596846%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));-->
+            <!--</script>-->
+			</span>
+    </p>
+    <div class="ma">
+        <font>扫码关注有礼</font><img src="/Public/home/images/erweima.jpg"></div>
+
+</div>
+<div style="text-align:center;margin-top:10px;">
+
+</div>
+<style>
+    .footer {
+        position: relative;
+    }
+
+    .footer .ma {
+        width: 1200px;
+        height: 145px;
+        position: absolute;
+        left: 50%;
+        margin-left: -600px;
+        top: 2px;
+    }
+
+    .footer .ma font {
+        display: block;
+        font-size: 14px;
+        color: #fff;
+        text-align: right;
+        margin-top: 5px;
+        margin-right: 8px;
+    }
+
+    .footer .ma img {
+        display: block;
+        float: right;
+        width: 100px;
+        height: 100px;
+        padding-top: 0;
+        margin-top: 10px;
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+
+        $(".news_li").mouseover(function () {
+
+            $(".news_box").show();
+
+        });
+
+        $(".news_li").mouseleave(function () {
+
+            $(".news_box").hide();
+
+        });
+
+        $(".left").luara({ width: "800", height: "400", interval: 4500, selected: "seleted", deriction: "left" });
+
+        $(".main4 li").mouseover(function () {
+
+            $(this).find(".biji").show();
+
+        });
+
+        $(".main4 li").mouseleave(function () {
+
+            $(this).find(".biji").hide();
+
+        });
+
+        $('.main5_shi_ren li').mouseover(function () {
+
+            $('.main5_shi_jj').hide();
+
+            var main5_shi_jj_i = $('.main5_shi_ren li').index($(this));
+
+            $('.main5_shi_jj').eq(main5_shi_jj_i).show();
+
+        });
+
+        $(".head_fan").click(function () {
+
+            $(".tan").show();
+
+        });
+
+        $(".close").click(function () {
+
+            $(".tan").hide();
+
+        });
+
+    });
+
+</script>
+
+<script>
+    $(function () {
+        $('.shi_nav22 li a').each(function () {
+            $(this).click(function () {
+                $('.shi_nav22 li a').removeClass('hover');
+                $(this).addClass('hover');
+                $('.shi_all2_con').hide();
+                var jing_i = $('.shi_nav22 li a').index($(this));
+                $('.shi_all2_con').eq(jing_i).show();
+            });
+        });
+        $('.shi_nav33 li a').each(function () {
+            $(this).click(function () {
+                $('.shi_nav33 li a').removeClass('hover');
+                $(this).addClass('hover');
+                $('.shi_all3_con').hide();
+                var jing_i = $('.shi_nav33 li a').index($(this));
+                $('.shi_all3_con').eq(jing_i).show();
+            });
+        });
+        $('.qh_nav li a').each(function () {
+            $(this).click(function () {
+                $('.qh_nav li a').removeClass('hover');
+                $(this).addClass('hover');
+                $('.qh_nav_con').hide();
+                var jing_i = $('.qh_nav li a').index($(this));
+                $('.qh_nav_con').eq(jing_i).show();
+                var ty = $(this).find('input').val();
+                $('#ss_type').val(ty);
+            });
+        });
+    });
+    function ht_so(tit) {
+        if (!tit) {
+            alert('请输入搜索词');
+            return false;
+        } else {
+            $('#keyword').val(tit);
+            $('#so_form').submit();
+        }
+    }
+    function setTab(name, cursel, n) {
+
+        for (i = 1; i <= n; i++) {
+
+            var menu = document.getElementById(name + i);
+
+            var con = document.getElementById("con_" + name + "_" + i);
+
+            menu.className = i == cursel ? "hover" : "";
+
+            con.style.display = i == cursel ? "block" : "none";
+
+        }
+
+    }
+
+
+
+    var slide_i = 0;//初始值
+
+    var slide_box_width = $('.slide').width();//每次移动的距离
+
+    var slide_max_i = $('.imgs').size();//全部多少个
+
+    function slide_left() {
+
+        if (slide_i < 0) {
+
+            slide_i = slide_i + 1;
+
+            $('.slide_box').animate({ 'left': slide_box_width * slide_i }, 1000);
+
+            return false;
+
+        }
+
+        $('.imgs').last().css('left', -slide_box_width * slide_max_i);
+
+        slide_i = 1;
+
+        $('.slide_box').animate({ 'left': slide_box_width * slide_i }, 1000, function () {
+
+            slide_i = -(slide_max_i - 1);
+
+            $('.slide_box').css('left', slide_box_width * slide_i);
+
+            $('.imgs').last().css('left', 'auto');
+
+        });
+
+    }
+
+    function slide_right() {
+        if (slide_i > -(slide_max_i - 1)) {
+            slide_i = slide_i - 1;
+            $('.slide_box').animate({ 'left': slide_box_width * slide_i }, 1000);
+            return false;
+        }
+        $('.imgs').first().css('left', slide_box_width * slide_max_i);
+        slide_i = slide_i - 1;
+        $('.slide_box').animate({ 'left': slide_box_width * slide_i }, 1000, function () {
+            slide_i = 0;
+            $('.slide_box').css('left', '0');
+            $('.imgs').first().css('left', 'auto');
+        });
+    }
+    $(function () {
+        $('.slide_box').width(slide_box_width * slide_max_i);
+        setInterval(slide_right, 4000);
+    });
+
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $('#carousel ul').carouFredSel({
+            prev: '#prev',
+            next: '#next',
+            scroll: 1000
+        });
+    });
+</script>
+
+
+
+</body>
+
+</html>

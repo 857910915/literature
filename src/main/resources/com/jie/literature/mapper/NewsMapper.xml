@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jie.literature.mapper.NewsMapper" >
+  <resultMap id="BaseResultMap" type="com.jie.literature.domain.News" >
+    <id column="news_id" property="newsId" jdbcType="INTEGER" />
+    <result column="news_suid" property="newsSuid" jdbcType="INTEGER" />
+    <result column="news_ruid" property="newsRuid" jdbcType="INTEGER" />
+    <result column="news_title" property="newsTitle" jdbcType="VARCHAR" />
+    <result column="news_text" property="newsText" jdbcType="VARCHAR" />
+    <result column="news_status" property="newsStatus" jdbcType="INTEGER" />
+    <result column="news_createtime" property="newsCreatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    news_id, news_suid, news_ruid, news_title, news_text, news_status,news_createtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from news
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from news
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jie.literature.domain.News" >
+    insert into news (news_id, news_suid, news_ruid, 
+      news_title, news_text, news_status,news_createtime
+      )
+    values (#{newsId,jdbcType=INTEGER}, #{newsSuid,jdbcType=INTEGER}, #{newsRuid,jdbcType=INTEGER}, 
+      #{newsTitle,jdbcType=VARCHAR}, #{newsText,jdbcType=VARCHAR}, #{newsStatus,jdbcType=INTEGER},
+      #{newsCreatetime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jie.literature.domain.News" >
+    insert into news
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="newsId != null" >
+        news_id,
+      </if>
+      <if test="newsSuid != null" >
+        news_suid,
+      </if>
+      <if test="newsRuid != null" >
+        news_ruid,
+      </if>
+      <if test="newsTitle != null" >
+        news_title,
+      </if>
+      <if test="newsText != null" >
+        news_text,
+      </if>
+      <if test="newsStatus != null" >
+        news_status,
+      </if>
+      <if test="newsCreatetime != null" >
+        news_createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="newsId != null" >
+        #{newsId,jdbcType=INTEGER},
+      </if>
+      <if test="newsSuid != null" >
+        #{newsSuid,jdbcType=INTEGER},
+      </if>
+      <if test="newsRuid != null" >
+        #{newsRuid,jdbcType=INTEGER},
+      </if>
+      <if test="newsTitle != null" >
+        #{newsTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="newsText != null" >
+        #{newsText,jdbcType=VARCHAR},
+      </if>
+      <if test="newsStatus != null" >
+        #{newsStatus,jdbcType=INTEGER},
+      </if>
+      <if test="newsCreatetime != null" >
+        #{newsCreatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jie.literature.domain.News" >
+    update news
+    <set >
+      <if test="newsSuid != null" >
+        news_suid = #{newsSuid,jdbcType=INTEGER},
+      </if>
+      <if test="newsRuid != null" >
+        news_ruid = #{newsRuid,jdbcType=INTEGER},
+      </if>
+      <if test="newsTitle != null" >
+        news_title = #{newsTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="newsText != null" >
+        news_text = #{newsText,jdbcType=VARCHAR},
+      </if>
+      <if test="newsStatus != null" >
+        news_status = #{newsStatus,jdbcType=INTEGER},
+      </if>
+      <if test="newsCreatetime != null" >
+        news_createtime=#{newsCreatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jie.literature.domain.News" >
+    update news
+    set news_suid = #{newsSuid,jdbcType=INTEGER},
+      news_ruid = #{newsRuid,jdbcType=INTEGER},
+      news_title = #{newsTitle,jdbcType=VARCHAR},
+      news_text = #{newsText,jdbcType=VARCHAR},
+      news_status = #{newsStatus,jdbcType=INTEGER}
+      news_createtime=#{newsCreatetime,jdbcType=TIMESTAMP},
+    where news_id = #{newsId,jdbcType=INTEGER}
+  </update>
+
+  <select id="toSelectNewsList" resultType="News">
+    select * from news
+    where
+      <if test="newsRuid!=null">
+        news_ruid=#{newsRuid} and
+      </if>
+    1=1
+    order by news_createtime desc
+  </select>
+</mapper>

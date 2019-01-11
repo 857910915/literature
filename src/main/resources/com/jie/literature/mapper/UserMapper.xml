@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jie.literature.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.jie.literature.domain.User" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="user_nickname" property="userNickname" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="user_img" property="userImg" jdbcType="VARCHAR" />
+    <result column="user_birthday" property="userBirthday" jdbcType="DATE" />
+    <result column="user_createtime" property="userCreatetime" jdbcType="TIMESTAMP" />
+    <result column="user_lasttime" property="userLasttime" jdbcType="TIMESTAMP" />
+    <result column="user_address" property="userAddress" jdbcType="VARCHAR" />
+    <result column="user_phone" property="userPhone" jdbcType="VARCHAR" />
+    <result column="user_sex" property="userSex" jdbcType="VARCHAR" />
+    <result column="user_age" property="userAge" jdbcType="VARCHAR" />
+    <result column="user_integral" property="userIntegral" jdbcType="INTEGER" />
+    <result column="user_balance" property="userBalance" jdbcType="DOUBLE" />
+    <result column="user_vx" property="userVx" jdbcType="VARCHAR" />
+    <result column="user_qq" property="userQq" jdbcType="VARCHAR" />
+    <result column="user_autograph" property="userAutograph" jdbcType="VARCHAR" />
+    <result column="user_status" property="userStatus" jdbcType="INTEGER" />
+    <result column="user_salt" property="userSalt" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, user_nickname, username, password, user_img, user_birthday, user_createtime,
+    user_lasttime, user_address, user_phone, user_sex, user_age, user_integral, user_balance, 
+    user_vx, user_qq, user_autograph, user_status, user_salt
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jie.literature.domain.User" >
+    insert into user (user_id, user_nickname, username,
+      password, user_img, user_birthday,
+      user_createtime, user_lasttime, user_address, 
+      user_phone, user_sex, user_age, 
+      user_integral, user_balance, user_vx, 
+      user_qq, user_autograph, user_status, 
+      user_salt)
+    values (#{userId,jdbcType=INTEGER}, #{userNickname,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},
+      #{password,jdbcType=VARCHAR}, #{userImg,jdbcType=VARCHAR}, #{userBirthday,jdbcType=DATE},
+      #{userCreatetime,jdbcType=TIMESTAMP}, #{userLasttime,jdbcType=TIMESTAMP}, #{userAddress,jdbcType=VARCHAR}, 
+      #{userPhone,jdbcType=VARCHAR}, #{userSex,jdbcType=VARCHAR}, #{userAge,jdbcType=VARCHAR}, 
+      #{userIntegral,jdbcType=INTEGER}, #{userBalance,jdbcType=DOUBLE}, #{userVx,jdbcType=VARCHAR}, 
+      #{userQq,jdbcType=VARCHAR}, #{userAutograph,jdbcType=VARCHAR}, #{userStatus,jdbcType=INTEGER}, 
+      #{userSalt,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jie.literature.domain.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="userNickname != null" >
+        user_nickname,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="userImg != null" >
+        user_img,
+      </if>
+      <if test="userBirthday != null" >
+        user_birthday,
+      </if>
+      <if test="userCreatetime != null" >
+        user_createtime,
+      </if>
+      <if test="userLasttime != null" >
+        user_lasttime,
+      </if>
+      <if test="userAddress != null" >
+        user_address,
+      </if>
+      <if test="userPhone != null" >
+        user_phone,
+      </if>
+      <if test="userSex != null" >
+        user_sex,
+      </if>
+      <if test="userAge != null" >
+        user_age,
+      </if>
+      <if test="userIntegral != null" >
+        user_integral,
+      </if>
+      <if test="userBalance != null" >
+        user_balance,
+      </if>
+      <if test="userVx != null" >
+        user_vx,
+      </if>
+      <if test="userQq != null" >
+        user_qq,
+      </if>
+      <if test="userAutograph != null" >
+        user_autograph,
+      </if>
+      <if test="userStatus != null" >
+        user_status,
+      </if>
+      <if test="userSalt != null" >
+        user_salt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userNickname != null" >
+        #{userNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userImg != null" >
+        #{userImg,jdbcType=VARCHAR},
+      </if>
+      <if test="userBirthday != null" >
+        #{userBirthday,jdbcType=DATE},
+      </if>
+      <if test="userCreatetime != null" >
+        #{userCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userLasttime != null" >
+        #{userLasttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userAddress != null" >
+        #{userAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="userPhone != null" >
+        #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null" >
+        #{userSex,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null" >
+        #{userAge,jdbcType=VARCHAR},
+      </if>
+      <if test="userIntegral != null" >
+        #{userIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="userBalance != null" >
+        #{userBalance,jdbcType=DOUBLE},
+      </if>
+      <if test="userVx != null" >
+        #{userVx,jdbcType=VARCHAR},
+      </if>
+      <if test="userQq != null" >
+        #{userQq,jdbcType=VARCHAR},
+      </if>
+      <if test="userAutograph != null" >
+        #{userAutograph,jdbcType=VARCHAR},
+      </if>
+      <if test="userStatus != null" >
+        #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="userSalt != null" >
+        #{userSalt,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jie.literature.domain.User" >
+    update user
+    <set >
+      <if test="userNickname != null" >
+        user_nickname = #{userNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userImg != null" >
+        user_img = #{userImg,jdbcType=VARCHAR},
+      </if>
+      <if test="userBirthday != null" >
+        user_birthday = #{userBirthday,jdbcType=DATE},
+      </if>
+      <if test="userCreatetime != null" >
+        user_createtime = #{userCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userLasttime != null" >
+        user_lasttime = #{userLasttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userAddress != null" >
+        user_address = #{userAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="userPhone != null" >
+        user_phone = #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null" >
+        user_sex = #{userSex,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null" >
+        user_age = #{userAge,jdbcType=VARCHAR},
+      </if>
+      <if test="userIntegral != null" >
+        user_integral = #{userIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="userBalance != null" >
+        user_balance = #{userBalance,jdbcType=DOUBLE},
+      </if>
+      <if test="userVx != null" >
+        user_vx = #{userVx,jdbcType=VARCHAR},
+      </if>
+      <if test="userQq != null" >
+        user_qq = #{userQq,jdbcType=VARCHAR},
+      </if>
+      <if test="userAutograph != null" >
+        user_autograph = #{userAutograph,jdbcType=VARCHAR},
+      </if>
+      <if test="userStatus != null" >
+        user_status = #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="userSalt != null" >
+        user_salt = #{userSalt,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jie.literature.domain.User" >
+    update user
+    set user_nickname = #{userNickname,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      user_img = #{userImg,jdbcType=VARCHAR},
+      user_birthday = #{userBirthday,jdbcType=DATE},
+      user_createtime = #{userCreatetime,jdbcType=TIMESTAMP},
+      user_lasttime = #{userLasttime,jdbcType=TIMESTAMP},
+      user_address = #{userAddress,jdbcType=VARCHAR},
+      user_phone = #{userPhone,jdbcType=VARCHAR},
+      user_sex = #{userSex,jdbcType=VARCHAR},
+      user_age = #{userAge,jdbcType=VARCHAR},
+      user_integral = #{userIntegral,jdbcType=INTEGER},
+      user_balance = #{userBalance,jdbcType=DOUBLE},
+      user_vx = #{userVx,jdbcType=VARCHAR},
+      user_qq = #{userQq,jdbcType=VARCHAR},
+      user_autograph = #{userAutograph,jdbcType=VARCHAR},
+      user_status = #{userStatus,jdbcType=INTEGER},
+      user_salt = #{userSalt,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+
+  <insert id="toRegister" parameterType="User">
+        insert into user (username,password,user_img,user_nickname,user_salt)
+        values (#{username},#{password},#{userImg},#{userNickname},#{userSalt})
+  </insert>
+
+  <select id="toSelectUser" resultType="User">
+        select * from user where username=#{username}
+  </select>
+
+  <select id="findPermission" resultType="Permission">
+        select * from permission
+         where per_id in
+         (select rp_pid
+         from role_perm
+         where rp_rid in
+         (select ur_rid from user_role where ur_uid=
+         (select user_id from user where username=#{username})))
+  </select>
+
+  <select id="toSelectUserList" resultType="User">
+    select * from user where user_status=0
+  </select>
+
+</mapper>

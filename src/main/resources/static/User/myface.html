@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>个人中心_水墨世界</title>
+    <link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/member.css" rel="stylesheet" type="text/css" />
+    <link href="css/ask.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="myjs/iframe.js"></script>
+    <script type="text/javascript" src="myjs/myface.js"></script>
+
+</head>
+
+<body>
+<!--头部开始-->
+<div id="tool">
+    <div class="tool_content">
+        <h2><a href="../index.html">
+            <!--<img src="https://static.duanwenxue.com/member/common/images/logo.png" align="absmiddle" alt="水墨世界" />-->
+            水墨世界首页
+        </a>
+        </h2>
+
+        <dl>
+            <dt>
+                <a href="user.html" class="member_base specnotice" > <img id="userImg1"  src="" /> <span id="userName1"></span> <i></i></a>
+
+                <ul>
+                    <li><a href="message.html">短消息</a></li>
+                    <li><a href="index.html">管理中心</a></li>
+                    <li><a href="user.html">我的主页</a></li>
+                    <li><a href="../logout">退　　出</a></li>
+                </ul>
+            </dt>
+        </dl>
+    </div>
+</div>
+<div class="tool_clear"></div>
+<script type="text/javascript">
+    $(function(){
+        //个人资料下拉
+        $(".tool_content dt").hover(
+            function(){
+                $(this).children("ul").show();
+            },
+            function(){
+                $(this).children("ul").hide();
+            }
+        );
+    });
+</script>
+<!--头部结束-->
+
+
+<!-- user_center_main 开始 -->
+<div class="user_center_main" id="offset_top">
+    <div class="main_container fl">
+        <div class="fl left relative">
+            <div>
+                <a href="javascript:qiandao();" id="sign_show_index" class="sign_show sign_show_index_has">签到</em></a>            </div>
+            <div class="hd">
+                <div class="info_lcol">
+                    <div class="u_pic">
+                        <img id="userImg2" src="" width="55" height="55" alt="" />
+                    </div>
+                    <div class="info_m">
+                        <div class="u_name" id="userName2"></div>
+                        <div class="lv" style="cursor:pointer;"><span id="lv_num"></span><span id="lv_span"></span></div>
+                    </div>
+                </div>
+                <div class="acco_info">
+                    <ul>
+                        <li>关注人气：<em id="renqi">0</em></li>
+                        <li id="yue">账户余额：0</li>
+                        <li id="jifen">我的积分：4,410<span class="tips_line"><a href="javascript:;" class="problem"></a><span class="tips i"><img src="https://static.duanwenxue.com/jifen.jpg"></span></span></li>
+                        <!--<li>可提现积分：4,310<span class="tips_line"><a href="javascript:;" class="problem"></a><span class="tips">积分提现只限于2017年10月之后的</span></span></li>-->
+                    </ul>
+                </div>
+                <div class="btn_write">
+                    <a href="article_add1.html" class="write_article" iframe="0"></a>
+                    <!--<a href="/member/diary_add.php" class="write_diary"></a>-->
+                </div>
+                <div class="btn_write"><a href="booksheif_list.html" style=" font-weight:bolder; border-radius:5px; background:#8DC61E; color:#FFF; width:100%; line-height:30px; text-align:center;">我的藏书架</a></div>
+
+
+                <!--<div class="btn_write"><a href="/member/story_add_book.php" style=" font-weight:bolder; border-radius:5px; background:#8DC61E; color:#FFF; width:100%; line-height:30px; text-align:center;">我要写小说</a></div>-->
+            </div>
+            <div class="bd">
+                <ul>
+                    <!--<li><a href="story_book.php">我的小说</a></li>-->
+                    <li><a href="content_list.html">我的文章</a></li>
+                    <!--<li><a href="content_list.php?channelid=17">我的日记</a></li>-->
+                    <!--<li><a href="rmbrecord_list.html">我的资产</a></li>-->
+                    <li><a href="message.html">短  消  息</a></li>
+                    <li><a href="comment.html">评论管理</a></li>
+                    <li><a href="feedback.html">留言管理</a></li>
+                    <li><a href="space.html">空间设置</a></li>
+                    <li><a href="profile.html">个人设置</a></li>
+                    <li><a href="user.html">我的主页</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="fr right relative">
+            <div id="show_yezi" class="yezi_happy"></div>
+            <div class="list_box">
+                <h1 class="head"><a href="profile.php"><span>基本资料</span></a><!--a href="myinfo.php"><span>详细资料</span></a--><a href="myface.php"><span>头像设置</span></a>编辑基本资料</h1>
+                <link rel="stylesheet" type="text/css" href="https://static.duanwenxue.com/face/css/jquery.Jcrop.min.css" media="all"/>
+                <link rel="stylesheet" type="text/css" href="https://static.duanwenxue.com/face/js/uploadify-v3.1/uploadify.css" media="all"/>
+                <script type="text/javascript" src="https://static.duanwenxue.com/face/js/uploadify-v3.1/jquery.uploadify-3.1.min.js?asdsd"></script>
+                <script type="text/javascript" src="https://static.duanwenxue.com/face/js/jquery.Jcrop.min.js"></script>
+                <style type="text/css">
+                    .cf:before,.cf:after {
+                        display: table;
+                        content: "";
+                        line-height: 0;
+                    }
+                    .cf:after {
+                        clear: both;
+                    }
+                    .cf {
+                        *zoom: 1;
+                    }
+                    .update-pic{padding-top:10px;}
+                    .upload-area {
+                        position: relative;
+                        float: left;
+                        /*overflow:hidden;*/
+                        margin-right: 30px;
+                        width: 204px;
+                        height: 204px;
+                        background-color: #F5F5F5;
+                        border: 2px solid #E1E1E1;
+                    }
+                    .upload-area .file-tips {
+                        position: absolute;
+                        top: 90px;
+                        left: 0;
+                        padding: 0 15px;
+                        line-height: 1.4;
+                        font-size: 12px;
+                        color: #A8A8A3;
+                        text-align: center;
+                    }
+                    .userup-icon {
+                        display: inline-block;
+                        margin-right: 3px;
+                        width: 16px;
+                        height: 16px;
+                        vertical-align: -2px;
+                        background: url("https://static.duanwenxue.com/face/images/userup_icon.png") no-repeat;
+                    }
+                    .uploadify-button {
+                        line-height: 120px!important;
+                        text-align: center;
+                    }
+                    .preview-area {
+                        float: left;
+                    }
+                    .tcrop {
+                        clear: right;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    .update-pic .crop {
+                        background: url("https://static.duanwenxue.com/face/images/mystery.png") no-repeat scroll center center #EEEEEE;
+                        float: left;
+                        margin-bottom: 20px;
+                        margin-top: 10px;
+                        overflow: hidden;
+                    }
+                    .crop100 {
+                        height: 100px;
+                        width: 100px;
+                    }
+                    .crop60 {
+                        height: 60px;
+                        margin-left: 20px;
+                        width: 60px;
+                    }
+                    .update-pic .save-pic {
+                        clear: left;
+                        margin-right: 20px;
+                    }
+                    .update-pic .uppic-btn {
+                        background-color: #348FD4;
+                        color: #FFFFFF;
+                        display: block;
+                        float: left;
+                        font-size: 16px;
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        vertical-align: middle;
+                        width: 89px;
+                    }
+                    .preview {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 11;
+                        width: 200px;
+                        height: 200px;
+                        overflow: hidden;
+                        background:#fff;
+                        display: none;
+                    }
+
+                    #face-progress{display:none;}
+                    .swfupload{height: 30px; left: 50px; position: absolute; top: 213px; width: 100px; z-index: 1;}
+                    .uploadify-queue{position:absolute; bottom:5px; left:0; width:100%;}
+                </style>
+                <!-- 修改头像 -->
+                <form method="post" id="pic" class="update-pic cf">
+                    <input type="hidden" name="dopost" value="save" />
+                    <div class="upload-area">
+                        <input type="file" id="user-pic">
+                        <div class="file-tips">支持JPG,PNG，图片小于1MB，尺寸不小于100*100,真实高清头像更受欢迎！</div>
+                        <div class="preview hidden" id="preview-hidden"></div>
+                    </div>
+                    <div class="preview-area">
+                        <input type="hidden" id="x" name="x" />
+                        <input type="hidden" id="y" name="y" />
+                        <input type="hidden" id="w" name="w" />
+                        <input type="hidden" id="h" name="h" />
+                        <input name='oldface' type='hidden' id='oldface' value='http://img.duanwenxue.com/uploads/userup/663026/avatar.jpg' />
+                        <input name='faceurl' type='hidden' id='img_src' value='http://img.duanwenxue.com/uploads/userup/663026/avatar.jpg' />
+                        <div class="tcrop">头像预览</div>
+                        <div class="crop crop100"><img id="crop-preview-100" src="http://img.duanwenxue.com/uploads/userup/663026/avatar.jpg?1545708201" height="100"></div>
+                        <div class="crop crop60"><img id="crop-preview-60" src="http://img.duanwenxue.com/uploads/userup/663026/avatar.jpg?1545708201" height="60"></div>
+                        <div class="cf" style="clear:both; margin-bottom:10px; width:100%;">
+                            <a class="btn btn-primary" id="save-pic" href="javascript:;"><span>确定</span></a>
+                            <!--a class="btn btn-info" id="reupload-img" href="javascript:;" onclick="$('#user-pic').uploadify('cancel', '*');
+        $('#face-progress').hide();"><span>重新上传</span></a-->
+                        </div>
+                        <div id="face-progress" class="progress progress-striped active">
+                            <img src="https://static.duanwenxue.com/loading.gif" /> 上传中...
+                        </div>
+                    </div>
+                    <div style="clear:both; padding:10px 0 0 75px;"><a class="btn btn-primary" id="btn-upload-face" href="javascript:;"><span>选择文件</span></a></div>
+                </form>
+                <!-- /修改头像 -->
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

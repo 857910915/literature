@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>魅力诗歌——水墨世界</title>
+
+	<meta name="description" content="">
+
+	<meta name="keywords" content="">
+
+	<link href="/Public/home/css/style.css" rel="stylesheet">
+
+	<script type="text/javascript" src="/Public/home/js/jquery.js"></script>
+	<script src="/Public/home/js/jquery.luara.0.0.1.min.js"></script>
+	<script src="/Public/home/js/jquery.carouFredSel-6.0.4-packed.js" type="text/javascript"></script>
+	<script src="/Public/home/js/jquery.slideBox.min.js" type="text/javascript"></script>
+	<script src="/Public/home/js/slider.js"></script>
+	<link rel="stylesheet" href="/Public/common/sweetalert-master/dist/sweetalert.css">
+	<script src="/Public/common/sweetalert-master/dist/sweetalert.min.js"></script>
+	<script type="text/javascript" src="/Public/home/js/language.js"></script>
+</head>
+
+<body>
+
+	<!--顶部-->
+
+	<div class="head">
+
+		<div class="head_content">
+
+			<div class="head_nav">
+
+				<ul>
+
+
+					<li><a href="/Public/login.html">登录</a></li>
+
+					<li><a href="/Public/register.html">注册</a></li>
+
+					<style>
+						.zh_click {
+							color: #757575 !important;
+						}
+					</style>
+
+
+					<li><a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体中文</a></li>
+
+					<li class="head_fan"><a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體中文</a></li>
+
+
+				</ul>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="logo clearfix">
+
+		<div class="logo1">
+
+			<a href="../index.html"><img src="/Public/home/images/index_logo1.png"></a>
+
+		</div>
+
+		<div class="logo2">
+
+			<img src="/Public/home/images/index_logo2.png">
+
+		</div>
+
+		<form action="/News/search_list.html" class="search">
+			<input type="text" name="keyword" value="" class="search_input" placeholder="请输入关键字">
+			<input type="submit" class="search_btn" value="搜索">
+		</form>
+
+	</div>
+	<div class="tan">
+		<div class="tan1 clearfix">
+			<span>温馨提示</span>
+			<a href="javascript:;" class="close">X</a>
+		</div>
+		<div class="tan2">
+			<p>繁体版文字由系统自动切换生成，部分浏览器不兼容，如有错误，请您理解。</p>
+		</div>
+	</div>
+
+
+
+	<div class="nav">
+		<ul class="clearfix">
+			<li><a href="../index.html" class="hover">首页</a></li>
+			<li class="news_li"><a href="">诗词欣赏</a>
+				<div class="news_box">
+					<a href="/News/index/type/1.html">现代诗歌</a>
+					<a href="/News/index/type/2.html">古风词韵</a>
+					<a href="/News/index/type/3.html">经典诗词</a>
+					<a href="/News/index/type/4.html">英语诗歌</a>
+				</div>
+			</li>
+			<li><a href="">专题展示</a></li>
+			<li><a target="_blank" href="http://bbs.zhsc.net/">诗词论坛</a></li>
+			<li><a href="">诗友会</a></li>
+			<li><a href="/Shiyi/index.html">诗意生活</a></li>
+			<li><a target="_blank" href="">个人中心</a></li>
+			<li><a href="/Houtai/index.html">后台管理</a></li>
+		</ul>
+	</div>
+
+
+
+
+
+	<div class="news_neirong">
+
+		<div class="news_banner">
+
+			<a href="javascript:;"><img src="/Public/upload/pic/0ea2fc0edc4f4f8fe3568c475b5935c7.png" title="shiyi"></a>
+
+		</div>
+
+		<div class="yi_bt clearfix">
+
+			<img src="/Public/home/images/yi_bt1.png">
+
+			<a href="/Shiyi/category/type/1.html">更多+</a>
+
+		</div>
+
+		<div class="yi_content1">
+
+			<ul class="clearfix">
+
+				<li>
+
+					<a target="_blank" href="/Shiyi/info/gid/33.html"><img src="/Public/upload/pic/50a930663bc1dc0d1a2ab0054e6c7cc0.jpg"></a>
+
+					<div class="shu1 clearfix">
+
+						<a target="_blank" href="/Shiyi/info/gid/33.html">诗词中国MOOK·第...</a>
+
+						<span class="sc_0" onclick="shoucang_func('33');">2</span>
+
+					</div>
+
+					<div class="shu2">
+
+						<a href="javascript:;">诗词中国</a>
+
+					</div>
+
+					<div class="shu3 clearfix">
+
+						<span>￥36</span>
+
+						<a target="_blank" href="/Shiyi/info/gid/33.html">购买</a>
+
+					</div>
+
+				</li>
+				<li>
+
+					<a target="_blank" href="/Shiyi/info/gid/32.html"><img src="/Public/upload/pic/26a7bc08d190c2607f592486f942f794.jpg"></a>
+
+					<div class="shu1 clearfix">
+
+						<a target="_blank" href="/Shiyi/info/gid/32.html">诗词中国MOOK·创...</a>
+
+						<span class="sc_0" onclick="shoucang_func('32');">1</span>
+
+					</div>
+
+					<div class="shu2">
+
+						<a href="javascript:;">诗词中国</a>
+
+					</div>
+
+					<div class="shu3 clearfix">
+
+						<span>￥36</span>
+
+						<a target="_blank" href="/Shiyi/info/gid/32.html">购买</a>
+
+					</div>
+
+				</li>
+				<li>
+
+					<a target="_blank" href="/Shiyi/info/gid/26.html"><img src="/Public/upload/pic/b1483909474c21f6256a5fdbc7347b33.jpg"></a>
+
+					<div class="shu1 clearfix">
+
+						<a target="_blank" href="/Shiyi/info/gid/26.html">《诗词写作常识》</a>
+
+						<span class="sc_0" onclick="shoucang_func('26');">1</span>
+
+					</div>
+
+					<div class="shu2">
+
+						<a href="javascript:;">钱志熙 刘青海　著 </a>
+
+					</div>
+
+					<div class="shu3 clearfix">
+
+						<span>￥15.3</span>
+
+						<a target="_blank" href="/Shiyi/info/gid/26.html">购买</a>
+
+					</div>
+
+				</li>
+				<li>
+
+					<a target="_blank" href="/Shiyi/info/gid/30.html"><img src="/Public/upload/pic/2d2331a476e170068adaff5589a43340.jpg"></a>
+
+					<div class="shu1 clearfix">
+
+						<a target="_blank" href="/Shiyi/info/gid/30.html">《柳永词》</a>
+
+						<span class="sc_0" onclick="shoucang_func('30');">2</span>
+
+					</div>
+
+					<div class="shu2">
+
+						<a href="javascript:;">薛瑞生 选注 </a>
+
+					</div>
+
+					<div class="shu3 clearfix">
+
+						<span>￥18.9</span>
+
+						<a target="_blank" href="/Shiyi/info/gid/30.html">购买</a>
+
+					</div>
+
+				</li>
+				<li>
+
+					<a target="_blank" href="/Shiyi/info/gid/29.html"><img src="/Public/upload/pic/a928a79f466e50c77be2610adf8ec3f4.jpg"></a>
+
+					<div class="shu1 clearfix">
+
+						<a target="_blank" href="/Shiyi/info/gid/29.html">《辛弃疾词》</a>
+
+						<span class="sc_0" onclick="shoucang_func('29');">2</span>
+
+					</div>
+
+					<div class="shu2">
+
+						<a href="javascript:;">辛更儒 选注</a>
+
+					</div>
+
+					<div class="shu3 clearfix">
+
+						<span>￥15.3</span>
+
+						<a target="_blank" href="/Shiyi/info/gid/29.html">购买</a>
+
+					</div>
+
+				</li>
+			</ul>
+
+		</div>
+
+		<div class="yi_bt clearfix">
+
+			<img src="/Public/home/images/yi_bt2.png">
+
+			<a href="/Shiyi/category/type/2.html">更多+</a>
+
+		</div>
+
+		<div class="yi_content1">
+
+			<ul class="clearfix">
+
+				<li>
+
+					<a target="_blank" href="/Shiyi/info/gid/23.html"><img src="/Public/upload/pic/d98d6b4d4cb891855de9bb549491c153.JPG"></a>
+
+					<div class="shu1 clearfix">
+
+						<a target="_blank" href="/Shiyi/info/gid/23.html">诗词中国纪念雨伞</a>
+
+						<span class="sc_0" onclick="shoucang_func('23');">1</span>
+
+					</div>
+
+					<div class="shu2">
+
+						<a href="javascript:;"></a>
+
+					</div>
+
+					<div class="shu3 clearfix">
+
+						<span>￥98</span>
+
+						<a target="_blank" href="/Shiyi/info/gid/23.html">购买</a>
+
+					</div>
+
+				</li>
+				<li>
+
+					<a target="_blank" href="/Shiyi/info/gid/34.html"><img src="/Public/upload/pic/3e10c753f64e478e5927238b14f4a63e.jpg"></a>
+
+					<div class="shu1 clearfix">
+
+						<a target="_blank" href="/Shiyi/info/gid/34.html">诗词中国主题T恤（情...</a>
+
+						<span class="sc_0" onclick="shoucang_func('34');">2</span>
+
+					</div>
+
+					<div class="shu2">
+
+						<a href="javascript:;">诗词中国</a>
+
+					</div>
+
+					<div class="shu3 clearfix">
+
+						<span>￥98</span>
+
+						<a target="_blank" href="/Shiyi/info/gid/34.html">购买</a>
+
+					</div>
+
+				</li>
+				<li>
+
+					<a target="_blank" href="/Shiyi/info/gid/31.html"><img src="/Public/upload/pic/79f988f911e7fdc22626362e236954d6.jpg"></a>
+
+					<div class="shu1 clearfix">
+
+						<a target="_blank" href="/Shiyi/info/gid/31.html">《孤馆深沉》民国书衣...</a>
+
+						<span class="sc_0" onclick="shoucang_func('31');">3</span>
+
+					</div>
+
+					<div class="shu2">
+
+						<a href="javascript:;">诗词中国</a>
+
+					</div>
+
+					<div class="shu3 clearfix">
+
+						<span>￥98</span>
+
+						<a target="_blank" href="/Shiyi/info/gid/31.html">购买</a>
+
+					</div>
+
+				</li>
+			</ul>
+
+		</div>
+
+		<!--<div class="yi_bt clearfix">-->
+
+		<!--<img src="/Public/home/images/shiyishenghuo_03.png">-->
+
+		<!--<a href="http://www.educhinstyle.cn/" target="_blank">更多+</a>-->
+
+		<!--</div>-->
+
+		<!--     诗词中国学院               -->
+
+
+		<div class="yi_content2">
+
+			<ul class="clearfix">
+
+
+			</ul>
+
+		</div>
+
+	</div>
+
+	<script>
+
+		function shoucang_func(gid) {
+			$.post("/Public/shoucang.html", { aid: gid, type: 2 }, function (v) {
+
+				if (v.status) {
+
+					swal({ title: '', text: v.info, type: 'success' }, function () {
+
+						location.reload();
+
+					});
+
+				} else {
+
+					swal('', v.info, 'error');
+
+				}
+
+			}, 'json');
+
+		}
+
+	</script>
+
+	<!--底部-->
+	<style>
+		.cnzz img {
+			display: inherit !important;
+			padding: 0 !important;
+			width: auto !important;
+			height: auto !important;
+		}
+	</style>
+	<div class="footer">
+
+		<a href=""><img src="/Public/home/images/index_logo4.png"></a>
+
+		<p>主办：xxxxxxxxxxxxxx &nbsp;&nbsp;| xxxxxxxxxxxx 咨询电话：xxxxxxxxx&nbsp;&nbsp;<span class="cnzz">
+				<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1260596846'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1260596846%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></span></p>
+		<div class="ma">
+			<font>扫码关注有礼</font><img src="/Public/home/images/erweima.jpg"></div>
+
+		<style>
+			.footer {
+				position: relative;
+			}
+
+			.footer .ma {
+				width: 1200px;
+				height: 145px;
+				position: absolute;
+				left: 50%;
+				margin-left: -600px;
+				top: 2px;
+			}
+
+			.footer .ma font {
+				display: block;
+				font-size: 14px;
+				color: #fff;
+				text-align: right;
+				margin-top: 5px;
+				margin-right: 8px;
+			}
+
+			.footer .ma img {
+				display: block;
+				float: right;
+				width: 100px;
+				height: 100px;
+				padding-top: 0;
+				margin-top: 10px;
+			}
+		</style>
+		<script type="text/javascript">
+
+			$(function () {
+
+				$(".news_li").mouseover(function () {
+
+					$(".news_box").show();
+
+				});
+
+				$(".news_li").mouseleave(function () {
+
+					$(".news_box").hide();
+
+				});
+
+				$(".left").luara({ width: "800", height: "400", interval: 4500, selected: "seleted", deriction: "left" });
+
+				$(".main4 li").mouseover(function () {
+
+					$(this).find(".biji").show();
+
+				});
+
+				$(".main4 li").mouseleave(function () {
+
+					$(this).find(".biji").hide();
+
+				});
+
+				$('.main5_shi_ren li').mouseover(function () {
+
+					$('.main5_shi_jj').hide();
+
+					var main5_shi_jj_i = $('.main5_shi_ren li').index($(this));
+
+					$('.main5_shi_jj').eq(main5_shi_jj_i).show();
+
+				});
+
+				$(".head_fan").click(function () {
+
+					$(".tan").show();
+
+				});
+
+				$(".close").click(function () {
+
+					$(".tan").hide();
+
+				});
+
+			});
+
+		</script>
+
+</body>
+
+</html>

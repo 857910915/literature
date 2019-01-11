@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jie.literature.mapper.ArticleMapper" >
+  <resultMap id="BaseResultMap" type="com.jie.literature.domain.Article" >
+    <id column="art_id" property="artId" jdbcType="INTEGER" />
+    <result column="art_type" property="artType" jdbcType="VARCHAR" />
+    <result column="art_title" property="artTitle" jdbcType="VARCHAR" />
+    <result column="art_text" property="artText" jdbcType="VARCHAR" />
+    <result column="art_uid" property="artUid" jdbcType="INTEGER" />
+    <result column="art_createtime" property="artCreatetime" jdbcType="TIMESTAMP" />
+    <result column="art_status" property="artStatus" jdbcType="INTEGER" />
+    <result column="art_fid" property="artFid" jdbcType="INTEGER" />
+    <result column="art_msource" property="artMsource" jdbcType="VARCHAR" />
+    <result column="art_num" property="artNum" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    art_id, art_type, art_title, art_text, art_uid, art_createtime, art_status, art_fid, 
+    art_msource,art_num
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from article
+    where art_id = #{artId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from article
+    where art_id = #{artId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jie.literature.domain.Article" >
+    insert into article (art_id, art_type, art_title, 
+      art_text, art_uid, art_createtime, 
+      art_status, art_fid, art_msource
+      )
+    values (#{artId,jdbcType=INTEGER}, #{artType,jdbcType=VARCHAR}, #{artTitle,jdbcType=VARCHAR}, 
+      #{artText,jdbcType=VARCHAR}, #{artUid,jdbcType=INTEGER}, #{artCreatetime,jdbcType=TIMESTAMP}, 
+      #{artStatus,jdbcType=INTEGER}, #{artFid,jdbcType=INTEGER}, #{artMsource,jdbcType=VARCHAR},
+      #{artNum,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jie.literature.domain.Article" >
+    insert into article
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="artId != null" >
+        art_id,
+      </if>
+      <if test="artType != null" >
+        art_type,
+      </if>
+      <if test="artTitle != null" >
+        art_title,
+      </if>
+      <if test="artText != null" >
+        art_text,
+      </if>
+      <if test="artUid != null" >
+        art_uid,
+      </if>
+      <if test="artCreatetime != null" >
+        art_createtime,
+      </if>
+      <if test="artStatus != null" >
+        art_status,
+      </if>
+      <if test="artFid != null" >
+        art_fid,
+      </if>
+      <if test="artMsource != null" >
+        art_msource,
+      </if>
+      <if test="artNum != null" >
+        art_num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="artId != null" >
+        #{artId,jdbcType=INTEGER},
+      </if>
+      <if test="artType != null" >
+        #{artType,jdbcType=VARCHAR},
+      </if>
+      <if test="artTitle != null" >
+        #{artTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="artText != null" >
+        #{artText,jdbcType=VARCHAR},
+      </if>
+      <if test="artUid != null" >
+        #{artUid,jdbcType=INTEGER},
+      </if>
+      <if test="artCreatetime != null" >
+        #{artCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="artStatus != null" >
+        #{artStatus,jdbcType=INTEGER},
+      </if>
+      <if test="artFid != null" >
+        #{artFid,jdbcType=INTEGER},
+      </if>
+      <if test="artMsource != null" >
+        #{artMsource,jdbcType=VARCHAR},
+      </if>
+      <if test="artNum != null" >
+        #{artNum,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jie.literature.domain.Article" >
+    update article
+    <set >
+      <if test="artType != null" >
+        art_type = #{artType,jdbcType=VARCHAR},
+      </if>
+      <if test="artTitle != null" >
+        art_title = #{artTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="artText != null" >
+        art_text = #{artText,jdbcType=VARCHAR},
+      </if>
+      <if test="artUid != null" >
+        art_uid = #{artUid,jdbcType=INTEGER},
+      </if>
+      <if test="artCreatetime != null" >
+        art_createtime = #{artCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="artStatus != null" >
+        art_status = #{artStatus,jdbcType=INTEGER},
+      </if>
+      <if test="artFid != null" >
+        art_fid = #{artFid,jdbcType=INTEGER},
+      </if>
+      <if test="artMsource != null" >
+        art_msource = #{artMsource,jdbcType=VARCHAR},
+      </if>
+      <if test="artNum != null" >
+        art_num=#{artNum,jdbcType=INTEGER},
+      </if>
+    </set>
+    where art_id = #{artId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jie.literature.domain.Article" >
+    update article
+    set art_type = #{artType,jdbcType=VARCHAR},
+      art_title = #{artTitle,jdbcType=VARCHAR},
+      art_text = #{artText,jdbcType=VARCHAR},
+      art_uid = #{artUid,jdbcType=INTEGER},
+      art_createtime = #{artCreatetime,jdbcType=TIMESTAMP},
+      art_status = #{artStatus,jdbcType=INTEGER},
+      art_fid = #{artFid,jdbcType=INTEGER},
+      art_msource = #{artMsource,jdbcType=VARCHAR}，
+      art_num=#{artNum,jdbcType=INTEGER}，
+    where art_id = #{artId,jdbcType=INTEGER}
+  </update>
+
+    <!--文章查询-->
+    <select id="toSelectArticleList" resultMap="articleMap" >
+        select a.*,u.*,c.*,f.* from article a LEFT join comment c on a.art_id=c.com_aid
+        LEFT join fabulous f on a.art_id=f.fab_aid LEFT join user u on a.art_uid=u.user_id
+        where a.art_uid=#{artUid}
+        order by a.art_createtime desc
+    </select>
+
+  <resultMap id="articleMap" type="Article" autoMapping="true">
+    <!--多对一关联-->
+    <association property="user" column="user_id" javaType="User" autoMapping="true">
+
+    </association>
+    <!--一对多关联-->
+    <collection property="commentList" ofType="Comment" column="com_id"  autoMapping="true" select="getCommentList">
+    </collection>
+
+    <collection property="fabulousList" ofType="Fabulous" column="fab_id"  autoMapping="true" select="getFabulousList">
+    </collection>
+
+  </resultMap>
+
+  <select id="getCommentList" parameterType="java.lang.Integer" resultType="Comment">
+        select * from comment where com_aid=#{art_id}
+   </select>
+
+  <select id="getFabulousList" parameterType="java.lang.Integer" resultType="Fabulous">
+        select * from fabulous where fab_aid=#{art_id}
+   </select>
+
+  <select id="toSelectArticleList1" resultMap="articleMap1" >
+        select a.*,u.* from article a,user u
+        where
+         <if test="artStatus!=null">
+           art_status=#{artStatus} and
+         </if>
+         <if test="artType!=null">
+           art_type=#{artType} and
+         </if>
+         <if test="artUid!=null">
+           a.art_uid=#{artUid} and
+         </if>
+         a.art_uid=u.user_id
+        order by a.art_createtime desc
+  </select>
+
+  <select id="toSelectAllArticle" resultMap="articleMap1">
+    select a.*,u.* from article a,user u
+    where
+    a.art_uid=u.user_id
+    order by a.art_createtime desc
+  </select>
+
+  <resultMap id="articleMap1" type="Article" autoMapping="true">
+    <!--多对一关联-->
+    <association property="user" column="user_id" javaType="User" autoMapping="true">
+
+    </association>
+
+  </resultMap>
+
+
+
+
+</mapper>
