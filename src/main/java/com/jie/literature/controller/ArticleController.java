@@ -33,7 +33,7 @@ public class ArticleController {
         articleService.toInsertArticle(article);
         return JSON.toJSONString("添加成功！") ;
     }
-
+    
     @RequestMapping("/toSelectArticleList")
     public  String toSelectArticleList(Article article,int pageNo,String username){
         if (username==null||username.length()==0){

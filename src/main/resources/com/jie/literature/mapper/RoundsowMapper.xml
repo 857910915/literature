@@ -103,4 +103,13 @@
       roun_status = #{rounStatus,jdbcType=INTEGER}
     where roun_id = #{rounId,jdbcType=INTEGER}
   </update>
+  <select id="toShow" resultType="Roundsow">
+    select * from roundsow
+    order by roun_createtime desc
+  </select>
+
+  <select id="toQuery" resultType="Roundsow">
+    select * from roundsow where roun_status = #{rounStatus}
+    order by roun_createtime desc
+  </select>
 </mapper>
